@@ -1,0 +1,50 @@
+main>section {
+    border-width: medium;
+    background-color: var(--base-color);
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 5vw white;
+    padding: 5vw;
+    border-radius: 10vw;
+    position: relative;
+}
+
+main>section h2 {
+    text-align:center;
+}
+
+main>section>form {
+    padding: 4vw 10vw 0vw;
+    position: relative;
+}
+
+main>section>form>fieldset {
+    padding: 5vw;
+    position: relative;
+}
+
+main>section>form input {
+    width: 100%;
+}
+
+main>section>form select {
+    width: 100%;
+}
+
+main>section>section {
+    visibility: hidden;
+}
+
+main>section button {
+    position: absolute;
+    bottom: -25vh;
+    padding: 1vw;
+    border-width: 0;
+    width: 20%;
+    height: 5%;
+}
+
+.sucess {
+    position: absolute;
+    right: 10vw;
+    background-color: var(--button-sucess-color);
+}

@@ -8,6 +8,8 @@
     --navegation-color: #5B76FF;
     --navegation-widh: 10vh;
     --button-font-size: 1.5vw;
+    --base-color: #B7DCE8;
+    --button-sucess-color: #7FFFD4FF;
     font-size: 20px;
 }
 
@@ -142,4 +144,11 @@ main>nav a {
         top: 3vh;
         left: 15vw;
     }
+}
+
+footer {
+    background-color: var(--navegation-color);
+    position: relative;
+    width: 100%;
+    height: 10vh;
 }
