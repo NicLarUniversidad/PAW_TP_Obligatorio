@@ -1,10 +1,14 @@
 :root {
     --font-size: 10 px;
-    --header-color: rgb(147, 217, 227);
-    --header-widh: 15vh;
-    --navegation-color: rgb(147, 167, 227);
-    --navegation-widh: 15vh;
-    --button-font-size: 4vh;
+    /*--header-color: linear-gradient(#ffffff, #83d6fd);*/
+    --header-color: linear-gradient(#ffffff, #B7DCE8);
+    --header-widh: 20vh;
+    --logo-size: 15vh;
+    --logo-size-movile: 7vh;
+    --navegation-color: #5B76FF;
+    --navegation-widh: 10vh;
+    --button-font-size: 1.5vw;
+    font-size: 20px;
 }
 
 body {
@@ -12,7 +16,7 @@ body {
 }
 
 body>header {
-    background-color: var(--header-color);
+    background: var(--header-color);
     width: 100%;
     height: var(--header-widh);
     overflow: hidden;
@@ -31,16 +35,21 @@ body>header>h1 {
 
 body>header>a {
     background-image: url("/resources/img/Logo.png");
-    background-size: var(--header-widh)var(--header-widh);
+    background-size: var(--logo-size)var(--logo-size);
     display: inline-block;
-    width: var(--header-widh);
-    height: var(--header-widh);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    border-radius: 50%;
+    top: 2.5vh;
+    left: 2.5vh;
+    position: absolute;
 }
 
 body>header>address {
     position: absolute;
     right: 5vw;
     top: 0;
+    color: #086D84;
 }
 
 body>main {
@@ -78,15 +87,17 @@ main>nav a {
     text-decoration: none;
     border: none;
     font-size: var(--button-font-size);
-    padding: 4vh;
+    padding: 6vh;
     padding-inline: 1vw;
     color: black;
 }
 
 .sub-menu-turno {
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 40%;
+    right: 5vw;
+    font-size: 0;
 }
 
 .sub-menu-turno>ul>li {
@@ -98,4 +109,37 @@ main>nav a {
     position: absolute;
     width: 50vw;
     top: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        position: relative;
+    }
+
+    body>header {
+        width: 100%;
+        background: var(--navegation-color);
+        height: var(--navegation-widh);
+        position: inherit;
+    }
+
+    body>header>a {
+        background-size: var(--logo-size-movile)var(--logo-size-movile);
+        width: var(--logo-size-movile);
+        height: var(--logo-size-movile);
+    }
+
+    body>header>address {
+        font-size: 0;
+    }
+
+    body>main>nav {
+        display: none;
+    }
+
+    body>header>h1 {
+        font-size: 3vh;
+        top: 3vh;
+        left: 15vw;
+    }
 }
