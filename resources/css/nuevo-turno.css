@@ -19,15 +19,37 @@ main>section>form {
 
 main>section>form>fieldset {
     padding: 5vw;
-    position: relative;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas:
+    "label input"
+    "label input";
+}
+
+main>section>form>fieldset legend {
+    position: absolute;
+    width: 0;
+    height: 0;
+    font-size: 0;
 }
 
 main>section>form input {
+    width: 70%;
+    max-height: 3vh;
+    background-color: var(--input-color);
+    border-color: var(--input-color);
+}
+
+main>section>form label {
     width: 100%;
+
 }
 
 main>section>form select {
-    width: 100%;
+    width: 71.8%;
+    max-height: 3vh;
+    background-color: var(--input-color);
+    border-color: var(--input-color);
 }
 
 main>section>section {
