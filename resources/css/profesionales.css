@@ -8,7 +8,60 @@ main>section {
     position: relative;
 }
 
-main>section h2 {
+main>section>h2 {
     width: 100%;
-    background-color: var(--header-color);
+    background: var(--base-color);
+    text-align: center;
+}
+
+main>section>section {
+    background: var(--base-color);
+    position: relative;
+}
+
+main>section>section>h3 {
+    text-align: center;
+}
+
+main>section>section>ul>li {
+    display: inline;
+}
+
+main>section>section>ul {
+    list-style: none;
+}
+
+main>section>section>ul>li>a {
+    text-decoration: none;
+    border: none;
+    font-size: var(--button-font-size);
+    padding: 6vh;
+    color: black;
+    background: #5B76FF;
+    width: 6vh;
+    height: 6vh;
+}
+
+main>section>section>p {
+    padding: 3vw;
+}
+
+main>section>section>img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main>section>section>button {
+    position: absolute;
+    background-color: var(--button-sucess-color);
+    border-width: 0;
+    width: 20%;
+    height: 10%;
+    right: 3vw;
+    bottom: 3vh;
 }
