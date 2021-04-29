@@ -17,6 +17,7 @@ main>section>h2 {
 main>section>section {
     background: var(--base-color);
     position: relative;
+    border-radius: 3vw;
 }
 
 main>section>section>h3 {

@@ -1,0 +1,29 @@
+main>section {
+    border-width: medium;
+    background-color: white;
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 5vw white;
+    padding: 5vw;
+    border-radius: 10vw;
+    position: relative;
+}
+
+main>section>h2 {
+    width: 100%;
+    background: var(--base-color);
+    text-align: center;
+}
+
+main>section>section {
+    background: var(--base-color);
+    position: relative;
+    border-radius: 6vw;
+}
+
+main>section>section>h3 {
+    text-align: center;
+}
+
+main>section>section>p {
+    padding: 3vw;
+}
