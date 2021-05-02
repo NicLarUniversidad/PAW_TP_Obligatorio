@@ -5,10 +5,11 @@
     --header-widh: 20vh;
     --logo-size: 15vh;
     --logo-size-movile: 7vh;
-    --navegation-color: #5B76FF;
+    --navegation-color: #003b70;
     --navegation-widh: 10vh;
     --button-font-size: 1.5vw;
-    --base-color: #B7DCE8;
+    --base-color: #00ADD8;
+    --base-color-title:#00457C;
     --button-sucess-color: #7FFFD4FF;
     --input-color: #5B76FF;
     font-size: 20px;
@@ -16,6 +17,7 @@
 
 body {
     padding: 0;
+    margin: 0;
 }
 
 body>header {
@@ -92,7 +94,7 @@ main>nav a {
     font-size: var(--button-font-size);
     padding: 6vh;
     padding-inline: 1vw;
-    color: black;
+    color: #ffffff;
 }
 
 .sub-menu-turno {
@@ -110,10 +112,13 @@ main>nav a {
 .sub-menu-turno>ul {
     list-style: none;
     position: absolute;
-    width: 50vw;
+    /*width: 50vw;*/
     top: 0;
 }
-
+iframe{
+    height: 100%;
+    width: 100%;
+}
 @media (max-width: 768px) {
     body {
         position: relative;
@@ -144,6 +149,10 @@ main>nav a {
         font-size: 3vh;
         top: 3vh;
         left: 15vw;
+    }
+    header > button {
+        display: flex;
+        float: right;
     }
 }
 
