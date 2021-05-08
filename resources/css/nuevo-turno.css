@@ -18,38 +18,48 @@ main>section>form {
 }
 
 main>section>form>fieldset {
-    padding: 5vw;
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-areas:
-    "label input"
-    "label input";
+    padding: 3vw;
+    /*display: grid;*/
+    /*grid-template-columns: 30% 70%;*/
+    /*grid-template-areas:*/
+    /*"label input"*/
+    /*"label input";*/
+    position: relative;
 }
 
-main>section>form>fieldset legend {
-    position: absolute;
-    width: 0;
-    height: 0;
-    font-size: 0;
-}
+/*main>section>form>fieldset legend {*/
+/*    position: absolute;*/
+/*    width: 0;*/
+/*    height: 0;*/
+/*    font-size: 0;*/
+/*}*/
 
 main>section>form input {
-    width: 70%;
+    width: 100%;
     max-height: 3vh;
     background-color: var(--input-color);
     border-color: var(--input-color);
+    color: var(--input-fonder-color);
+    outline: 0;
+    padding: var(--font-size);
 }
 
 main>section>form label {
     width: 100%;
-
+    transform-origin: top left;
+    transform: translate(0, 16px) scale(1);
+    transition: all .1s ease-in-out;
 }
+main>section>form label {
+     transform: translate(0, 4px) scale(.75);
+ }
 
 main>section>form select {
-    width: 71.8%;
+    width: 100%;
     max-height: 3vh;
     background-color: var(--input-color);
     border-color: var(--input-color);
+    color: var(--input-fonder-color);
 }
 
 main>section>section {
