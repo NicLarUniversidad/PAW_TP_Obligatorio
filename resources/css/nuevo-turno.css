@@ -13,7 +13,7 @@ main>section h2 {
 }
 
 main>section>form {
-    padding: 4vw 10vw 0vw;
+    padding: 4vw 10vw 0;
     position: relative;
 }
 
