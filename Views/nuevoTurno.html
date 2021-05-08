@@ -3,148 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <title>Nuevo turno</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/nuevo-turno.css" />
 </head>
 <body>
-<header>
-    <!-- Logo -->
-    <img src="/resources/img/Logo.png" alt="Clinical" width="" height="">
-    <address>Av. Corrientes 123 <small>Teléfono: 555-555-555</small></address>
-    <h1>Clinical</h1>
-</header>
-<main>
-    <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="institucional.html">Institucional</a></li>
-            <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="obrasSociales.html">Obras sociales</a></li>
-            <li><a href="profesionales.html">Profesionales</a></li>
-            <li><a href="">Turnos</a>
-                <ul>
-                    <li><a href="nuevoTurno.html">Sacar un turno</a></li>
-                    <li><a href="listaTurnos.html">Listados de turnos solicitados</a></li>
-                </ul>
-        </ul>
-    </nav>
-    <!-- Agregar imagen de casita-->
-    <a href="home.html"></a>
-            <!-- Agregar parte no genérica acá abajo-->
+    <header>
+        <!-- Logo -->
+        <!--    <img src="/resources/img/Logo.png" alt="Clinical" width="" height="">-->
+        <a href="home.html"></a>
+        <address>Av. Corrientes 123 <small>Teléfono: 555-555-555</small></address>
+        <h1>Clinical</h1>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="institucional.html">Institucional</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="obrasSociales.html">Obras sociales</a></li>
+                <li><a href="profesionales.html">Profesionales</a></li>
+                <li><a href="nuevoTurno.html">Sacar un turno</a></li>
+                <li><a href="listaTurnos.html">Listados de turnos solicitados</a></li>
+            </ul>
+            <!-- Agregar imagen de casita-->
+            <a href="home.html"></a>
+        </nav>
+        <!-- Agregar parte no genérica acá abajo-->
+        <section>
+            <h2> Sacar un turno</h2>
+            <form>
+                <fieldset>
+                    <legend>Identidad</legend>
+                    <label for="apellido">Apellido
+                    <input id="apellido" name="apellido"></label>
+                    <label for="nombre">Nombre
+                    <input id="nombre" name="nombre"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label for="tel">Teléfono
+                    <input id="tel" name="tel"></label>
+                    <label for="fecha-nac">Fecha de nacimiento
+                    <input id="fecha-nac" name="fecha-nac"></label>
+                    <label for="edad">Edad
+                    <input id="edad" name="edad"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Turno</legend>
+                    <label for="turno-medico">Médico
+                    <select id="turno-medico" name="turno-medico">
+                        <option selected>Juan</option>
+                        <option>Pepe</option>
+                    </select></label>
+                    <label for="fecha-turno">Fecha del turno
+                    <input id="fecha-turno" name="fecha-turno"></label>
+                    <label for="horario-turno">Horario del turno
+                    <input id="horario-turno" name="horario-turno"></label>
+                </fieldset>
+                <button>Limpiar</button>
+                <button class="success">Solicitar</button>
+            </form>
             <section>
-                <h2> Sacar un turno</h2>
-                <form>
-                    <fieldset>
-                        <legend>Identidad</legend>
-                        <label for="apellido">Apellido</label>
-                        <input id="apellido" name="apellido">
-                        <label for="nombre">Nombre</label>
-                        <input id="nombre" name="nombre">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Datos personales</legend>
-                        <label for="tel">Teléfono</label>
-                        <input id="tel" name="tel">
-                        <label for="fecha-nac">Fecha de nacimiento</label>
-                        <input id="fecha-nac" name="fecha-nac">
-                        <label for="edad">Edad</label>
-                        <input id="edad" name="edad">
-                    </fieldset>
-                    <fieldset>
-                        <legend>Turno</legend>
-                        <label for="turno-medico">Médico</label>
-                        <select id="turno-medico" name="turno-medico">
-                            <option selected>Juan</option>
-                            <option>Pepe</option>
-                        </select>
-                        <label for="fecha-turno">Fecha del turno</label>
-                        <input id="fecha-turno" name="fecha-turno">
-                        <label for="horario-turno">Horario del turno</label>
-                        <input id="horario-turno" name="horario-turno">
-                        <section>
-                            <h3>Turnos disponibles con el Dr. Juan</h3>
-                            <table>
-                                <tr>
-                                    <th>L</th>
-                                    <th>M</th>
-                                    <th>M</th>
-                                    <th>J</th>
-                                    <th>V</th>
-                                    <th>S</th>
-                                    <th>D</th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th>13:00</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th>13:30</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th>15:00</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </table>
-                        </section>
-                    </fieldset>
-                    <button>Limpiar</button>
-                    <button class="sucess">Solicitar</button>
-                </form>
+                <h3>Turnos disponibles con el Dr. Juan</h3>
+                <table>
+                    <tr>
+                        <th>L</th>
+                        <th>M</th>
+                        <th>M</th>
+                        <th>J</th>
+                        <th>V</th>
+                        <th>S</th>
+                        <th>D</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>13:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>13:30</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>15:00</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
             </section>
-        </main>
-        <footer>
-            <small>Contáctese con nosotros</small>
-            <small>Legal</small>
-        </footer>
-    </body>
+        </section>
+    </main>
+    <footer>
+        <small>Contáctese con nosotros</small>
+        <small>Legal</small>
+    </footer>
+</body>
 </html>
