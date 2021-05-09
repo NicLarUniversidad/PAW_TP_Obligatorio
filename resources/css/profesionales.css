@@ -66,3 +66,24 @@ main>section>section>button {
     right: 3vw;
     bottom: 3vh;
 }
+
+@media (max-width: 768px) {
+    main>section>section>ul>li>a {
+        text-decoration: none;
+        border: none;
+        font-size: var(--button-font-size);
+        padding: 3vw;
+        color: black;
+        background: #5B76FF;
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .menu_desplegado {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100%;
+    }
+}
