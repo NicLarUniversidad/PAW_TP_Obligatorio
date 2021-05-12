@@ -75,7 +75,7 @@ main>section button {
     height: 5%;
 }
 
-.sucess {
+.success {
     position: absolute;
     right: 10vw;
     background-color: var(--button-sucess-color);

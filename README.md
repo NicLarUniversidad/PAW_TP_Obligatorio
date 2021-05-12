@@ -9,3 +9,8 @@
 ## TP2:
 
 * Consignas: https://docs.google.com/document/d/1HvIJB_lH6pm-cDgj8y6AJtPXr_i5wDlToiXXgrcVhpQ
+
+
+## TP3:
+
+* Consignas: https://docs.google.com/document/d/1OaPIsRdc1pQ-N-6TLhcrsA-zzhx0Q4uYV_TGMx8bo60
