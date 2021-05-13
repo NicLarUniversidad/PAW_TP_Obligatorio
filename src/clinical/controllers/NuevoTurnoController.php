@@ -30,7 +30,7 @@ class NuevoTurnoController extends Controller
             $mensajeError .= "Campo horario de turno está vacío\n";
         }
         if ($mensajeError != "") {
-            $turno = Model::factory("Turno");
+            $turno = Model::factory("TurnoModel");
             $turno->setField("apellido", $this->request->get("apellido"));
             $turno->setField("nombre", $this->request->get("nombre"));
             $turno->setField("tel", $this->request->get("tel"));

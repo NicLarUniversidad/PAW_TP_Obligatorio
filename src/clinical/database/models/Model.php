@@ -3,43 +3,58 @@
 namespace src\clinical\database\models;
 
 use Monolog\Logger;
+use src\clinical\database\QueryBuilder;
 use src\clinical\exceptions\IndexNotFoundException;
+use src\clinical\traits\TConnection;
+use src\clinical\traits\TLogger;
 
 class Model
 {
-    public static Logger $logger;
+    use TLogger;
+    use TConnection;
+
+    public static Logger $log;
     public static \PDO $pdo;
 
     public static function init(Logger $log, \PDO $connection) {
-        Model::$logger = $log;
+        Model::$log = $log;
         Model::$pdo = $connection;
     }
 
     public static function factory(String $className) {
         $path = "src\\clinical\\database\\models\\{$className}";
         $model = new $path();
-        $model->setLogger(Model::$logger);
+        $model->setLogger(Model::$log);
         $model->setConnection(Model::$pdo);
         return $model;
     }
 
-    private array $atributos = Array();
+    protected array $tableFields = Array();
+    protected QueryBuilder $queryBuilder;
 
     public function save() {
 
     }
 
     public function setField(String $field, String $value) : void {
-        $this->atributos[$field] = $value;
+        $this->tableFields[$field] = $value;
     }
 
     /**
      * @throws IndexNotFoundException
      */
     public function getField(String $field) : String {
-        if (array_key_exists($field, $this->atributos)){
-            return $this->atributos[$field];
+        if (array_key_exists($field, $this->tableFields)){
+            return $this->tableFields[$field];
         }
-        throw new IndexNotFoundException("No halló el indice \"$field\": $this->atributos");
+        throw new IndexNotFoundException("No halló el indice \"$field\": $this->tableFields");
+    }
+
+    public function loadQueryBuilder() : void {
+        if (! is_null($this->queryBuilder)) {
+            if (!is_null($this->logger) && !is_null($this->connection)) {
+                $this->queryBuilder = new QueryBuilder($this->connection, $this->logger);
+            }
+        }
     }
 }

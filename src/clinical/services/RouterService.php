@@ -21,15 +21,6 @@ class RouterService{
         "PUT"=>[],
     ];
 
-    public  string  $notFound = 'not_found';
-    public string  $internalError = 'internal_error';
-
-    public function __construct() {
-        $this->get($this->notFound,'ErrorController@notFound');
-        $this->get($this->internalError,'ErrorController@nInternalError');
-    }
-
-
     public function loadRoutes($path, $action, $method = "GET") {
         $this->routes[$method][$path]= $action;
     }
@@ -74,25 +65,16 @@ class RouterService{
     }
 
     public function  direct() {
-        try {
-            list($path, $http_method) = $this->request->route();
-            list($controller, $method) = $this->getController($path,$http_method);
-            $this->logger
-                ->info(
-                    "Status Code: 200",
-                    [
-                        "Path"=>$path,
-                        "Method" =>$http_method,
-                    ]
-                );
-        }catch ( PageNotFoundException $e) {
-            list($controller, $method) = $this->getController($this->notFound,"GET");//explode('@',$this->routes[$method][$path]);
-            $this->logger->debug("Status Code : 404 - Route not found", ["ERROR"=>$e]);
-        }catch ( Exception $e){
-            list($controller, $method) = $this->getController($this->internalError,"GET");//explode('@',$this->routes[$method][$path]);
-            $this->logger->error("Status Code : 500 - Internal Server Error", ["ERROR"=>$e]);
-        } finally {
-            $this->call($controller,$method);
-        }
+        list($path, $http_method) = $this->request->route();
+        list($controller, $method) = $this->getController($path,$http_method);
+        $this->logger
+            ->info(
+                "Status Code: 200",
+                [
+                    "Path"=>$path,
+                    "Method" =>$http_method,
+                ]
+            );
+        $this->call($controller,$method);
     }
 }
