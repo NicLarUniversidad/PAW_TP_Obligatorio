@@ -26,7 +26,12 @@ class Model
         $model = new $path();
         $model->setLogger(Model::$log);
         $model->setConnection(Model::$pdo);
+        $model->loadQueryBuilder();
         return $model;
+    }
+
+    protected static function createQueryBuilder() : QueryBuilder {
+        return new QueryBuilder(Model::$pdo, Model::$log);
     }
 
     protected array $tableFields = Array();
@@ -51,7 +56,7 @@ class Model
     }
 
     public function loadQueryBuilder() : void {
-        if (! is_null($this->queryBuilder)) {
+        if (! isset($this->queryBuilder)) {
             if (!is_null($this->logger) && !is_null($this->connection)) {
                 $this->queryBuilder = new QueryBuilder($this->connection, $this->logger);
             }

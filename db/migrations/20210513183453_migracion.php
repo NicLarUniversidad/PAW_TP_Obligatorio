@@ -24,20 +24,20 @@ final class Migracion extends AbstractMigration
             ->addColumn('CUIT', 'string', ['null' => true])
             ->create();
         $table = $this->table('disponibilidad');
-        $table->addColumn('id-medico', 'integer')
+        $table->addColumn('id_medico', 'integer')
             ->addColumn('fecha', 'date')
-            ->addForeignKey("id-medico","medico","id")
+            ->addForeignKey("id_medico","medico","id")
             ->create();
         $table = $this->table('turno');
-        $table->addColumn('id-medico', 'integer')
-            ->addColumn('nombre-paciente', 'string')
-            ->addColumn('apellido-paciente', 'string')
-            ->addColumn('tel-paciente', 'string', ['null' => true])
-            ->addColumn('edad-paciente', 'string', ['null' => true])
-            ->addColumn('horario-turno', 'date')
-            ->addForeignKey("id-medico","medico","id")
+        $table->addColumn('id_medico', 'integer')
+            ->addColumn('nombre_paciente', 'string')
+            ->addColumn('apellido_paciente', 'string')
+            ->addColumn('tel_paciente', 'string', ['null' => true])
+            ->addColumn('edad_paciente', 'string', ['null' => true])
+            ->addColumn('horario_turno', 'date')
+            ->addForeignKey("id_medico","medico","id")
             ->create();
-        $table = $this->table('obra-social');
+        $table = $this->table('obra_social');
         $table->addColumn('nombre', 'string')
             ->create();
     }

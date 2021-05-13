@@ -61,10 +61,11 @@ class QueryBuilder
         foreach ($this->values as $field => $value) {
             if (! $primero) {
                 $this->query .= ",";
+                $postQuery .= ",";
             } else {
                 $primero = false;
             }
-            $this->query = " :$field";
+            $this->query .= " $field";
             $postQuery .= " :$field";
         }
         $this->query .= ") VALUES " . $postQuery . ")";

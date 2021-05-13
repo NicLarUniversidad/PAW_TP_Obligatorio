@@ -12,7 +12,7 @@ class NuevoTurnoController extends Controller
         $this->pageFinderService->findFileRute("nuevoTurno","php","php", $cssImports);
     }
 
-    public function put() : void {
+    public function post() : void {
         $mensajeError = "";
         if (is_null($this->request->get("apellido"))) {
             $mensajeError .= "Campo apellido está vacío\n";
@@ -29,15 +29,14 @@ class NuevoTurnoController extends Controller
         if (is_null($this->request->get("horario-turno"))) {
             $mensajeError .= "Campo horario de turno está vacío\n";
         }
-        if ($mensajeError != "") {
+        if ($mensajeError == "") {
             $turno = Model::factory("TurnoModel");
-            $turno->setField("apellido", $this->request->get("apellido"));
-            $turno->setField("nombre", $this->request->get("nombre"));
-            $turno->setField("tel", $this->request->get("tel"));
-            $turno->setField("fecha-nac", $this->request->get("fecha-nac"));
-            $turno->setField("turno-medico", $this->request->get("turno-medico"));
-            $turno->setField("fecha-turno", $this->request->get("fecha-turno"));
-            $turno->setField("horario-turno", $this->request->get("horario-turno"));
+            $turno->setApellido($this->request->get("apellido"));
+            $turno->setNombre($this->request->get("nombre"));
+            $turno->setTel($this->request->get("tel"));
+            $turno->setFechaNacimiento($this->request->get("fecha-nac"));
+            $turno->setMedico($this->request->get("turno-medico"));
+            $turno->setHorario($this->request->get("fecha-turno"), $this->request->get("horario-turno"));
             $turno->save();
             echo "Guardado";
         }

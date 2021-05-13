@@ -3,7 +3,7 @@ require __DIR__ . "/pre-commons.php";
 ?>
     <section>
         <h2> Sacar un turno</h2>
-        <form>
+        <form action="/nuevoTurno" method="post">
             <fieldset>
                 <legend>Identidad</legend>
                 <label for="apellido">Apellido
@@ -14,11 +14,11 @@ require __DIR__ . "/pre-commons.php";
             <fieldset>
                 <legend>Datos personales</legend>
                 <label for="tel">Teléfono
-                    <input id="tel" name="tel"></label>
+                    <input id="tel" name="tel" type="tel"></label>
                 <label for="fecha-nac">Fecha de nacimiento
-                    <input id="fecha-nac" name="fecha-nac"></label>
+                    <input id="fecha-nac" name="fecha-nac" type="date"></label>
                 <label for="edad">Edad
-                    <input id="edad" name="edad"></label>
+                    <input id="edad" name="edad" type="number" min="0"></label>
             </fieldset>
             <fieldset>
                 <legend>Turno</legend>
@@ -28,9 +28,9 @@ require __DIR__ . "/pre-commons.php";
                         <option>Pepe</option>
                     </select></label>
                 <label for="fecha-turno">Fecha del turno
-                    <input id="fecha-turno" name="fecha-turno"></label>
+                    <input id="fecha-turno" name="fecha-turno" type="date"></label>
                 <label for="horario-turno">Horario del turno
-                    <input id="horario-turno" name="horario-turno"></label>
+                    <input id="horario-turno" name="horario-turno" type="time"></label>
             </fieldset>
             <button>Limpiar</button>
             <button class="success">Solicitar</button>
