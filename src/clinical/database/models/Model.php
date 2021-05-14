@@ -37,10 +37,6 @@ class Model
     protected array $tableFields = Array();
     protected QueryBuilder $queryBuilder;
 
-    public function save() {
-
-    }
-
     public function setField(String $field, String $value) : void {
         $this->tableFields[$field] = $value;
     }
