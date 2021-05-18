@@ -145,6 +145,9 @@ footer {
     height: 10vh;
 }
 @media (max-width: 768px) {
+    :root{
+        --button-font-size: 15px;
+    }  
     body {
         position: relative;
     }
@@ -167,9 +170,21 @@ footer {
     }
 
     body>main>nav {
-        display: none;
+        display: block;
+        width: auto;
+        height: auto;
     }
+    body>main>nav>ul{
+        margin: 1rem 1rem;
+        justify-content: center;
+        display: block;
+        padding: 1em;
 
+    }
+    body>main>nav>ul>li{
+        text-align: center;
+        display: block;
+    }
     body>header>h1 {
         font-size: 3vh;
         top: 3vh;

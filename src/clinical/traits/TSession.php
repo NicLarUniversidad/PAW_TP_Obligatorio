@@ -2,7 +2,7 @@
 
 namespace src\clinical\traits;
 
-trait tSession {
+trait TSession {
 
     public $session;
 

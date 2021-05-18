@@ -4,7 +4,7 @@ namespace src\clinical\traits;
 
 use src\clinical\services\RequestService;
 
-trait tRequest {
+trait TRequest {
 
     public RequestService $request;
 

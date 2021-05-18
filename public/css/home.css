@@ -50,22 +50,23 @@ main>section>section>ul>li>a {
     height: 6vh;
 }
 
-/*main>section>section>p {
-    padding: 10vw 1vw 1vw 1vw;
+main>section>section>p {
+    padding: 0 1vw 1vw 1vw;
     margin-top: 0;
     margin-bottom: 0;
-}*/
+}
 
 main section section img {
-    float: left;
+    float: inline-start;
     display: block;
     margin: 2vw;
-    width: 50%; /* Width of new image */
-    height: 100%; /* Height of new image */
+    width: 95%; /* Width of new image */
+    height: 30vw; /* Height of new image */
     background: url(https://www.vinculomedico.com/images/Grupomedico2.jpg) ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    left: 50%;
 }
 
 main>section>section>button {

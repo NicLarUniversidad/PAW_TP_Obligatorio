@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . '/vendor/autoload.php';
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__);
@@ -24,13 +24,13 @@ return
             'charset' => 'utf8',
         ],
         'development' => [
-            'adapter' => getenv("DB_ADAPTER") ?? 'mysql',
-            'host' => getenv("DB_HOSTNAME") ?? 'localhost',
-            'name' => getenv("DB_DBNAME") ?? 'development_db',
-            'user' => getenv("DB_USERNAME") ??'root',
-            'pass' => getenv("DB_PASSWORD") ??'',
-            'port' => getenv("DB_PORT") ?? '3306',
-            'charset' => getenv("DB_CHARSET") ?? 'utf8',
+            'adapter' =>'mysql',
+            'host' =>  '127.0.0.1',
+            'name' => 'development_db',
+            'user' =>'root',
+            'pass' => '',
+            'port' => '3306',
+            'charset' => 'utf8',
         ],
         'testing' => [
             'adapter' => 'mysql',
