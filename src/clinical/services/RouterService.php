@@ -61,6 +61,7 @@ class RouterService{
         $objController->setConnection($this->connection);
         $objController->setRequest($this->request);
         $objController->setLogger($this->logger);
+        $objController->init();
         $objController->$method();
     }
 

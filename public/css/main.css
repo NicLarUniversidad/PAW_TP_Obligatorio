@@ -57,7 +57,7 @@ body>header>h1 {
 }
 
 body>header>a {
-    background-image: url("/resources/img/Logo.png");
+    background-image: url("img/Logo.png");
     background-size: var(--logo-size)var(--logo-size);
     display: inline-block;
     width: var(--logo-size);

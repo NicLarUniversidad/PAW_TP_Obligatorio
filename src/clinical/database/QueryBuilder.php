@@ -54,20 +54,24 @@ class QueryBuilder
     }
 
     public function insert(string $table, array $values) : QueryBuilder {
-        $this->query = "INSERT INTO $table (";
+        $this->query = "INSERT INTO `paw`.`$table` (";
         $this->values = $values;
         $postQuery = "(";
         $primero = true;
+        $dummy = "(";
         foreach ($this->values as $field => $value) {
             if (! $primero) {
                 $this->query .= ",";
                 $postQuery .= ",";
+                $dummy .= ",";
             } else {
                 $primero = false;
             }
             $this->query .= " $field";
             $postQuery .= " :$field";
+            $dummy .= " $value";
         }
+        $this->logger->info("Prepared: $this->query $dummy)");
         $this->query .= ") VALUES " . $postQuery . ")";
         return $this;
     }

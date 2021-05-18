@@ -30,12 +30,16 @@ class Model
         return $model;
     }
 
-    protected static function createQueryBuilder() : QueryBuilder {
+    public static function createQueryBuilder() : QueryBuilder {
         return new QueryBuilder(Model::$pdo, Model::$log);
     }
 
-    protected array $tableFields = Array();
+    protected array $tableFields = array();
     protected QueryBuilder $queryBuilder;
+
+    public function getTableFields() : array {
+        return $this->tableFields;
+    }
 
     public function setField(String $field, String $value) : void {
         $this->tableFields[$field] = $value;

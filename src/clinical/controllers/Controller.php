@@ -23,4 +23,6 @@ class Controller
     {
         $this->pageFinderService = new PageFinderService();
     }
+
+    public function init() {}
 }

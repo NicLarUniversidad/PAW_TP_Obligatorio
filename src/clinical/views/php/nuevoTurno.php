@@ -3,13 +3,13 @@ require __DIR__ . "/pre-commons.php";
 ?>
     <section>
         <h2> Sacar un turno</h2>
-        <form action="/nuevoTurno" method="post">
+        <form action="/nuevoTurno" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Identidad</legend>
                 <label for="apellido">Apellido
-                    <input id="apellido" name="apellido"></label>
+                    <input id="apellido" name="apellido" required></label>
                 <label for="nombre">Nombre
-                    <input id="nombre" name="nombre"></label>
+                    <input id="nombre" name="nombre" required></label>
             </fieldset>
             <fieldset>
                 <legend>Datos personales</legend>
@@ -23,14 +23,16 @@ require __DIR__ . "/pre-commons.php";
             <fieldset>
                 <legend>Turno</legend>
                 <label for="turno-medico">Médico
-                    <select id="turno-medico" name="turno-medico">
-                        <option selected>Juan</option>
-                        <option>Pepe</option>
+                    <select id="turno-medico" name="turno-medico" required>
+                        <option selected value="1">Juan</option>
+                        <option value="1">Pepe</option>
                     </select></label>
                 <label for="fecha-turno">Fecha del turno
-                    <input id="fecha-turno" name="fecha-turno" type="date"></label>
+                    <input id="fecha-turno" name="fecha-turno" type="date" required></label>
                 <label for="horario-turno">Horario del turno
-                    <input id="horario-turno" name="horario-turno" type="time"></label>
+                    <input id="horario-turno" name="horario-turno" type="time" required></label>
+                <label for="archivo">Archivo
+                    <input id="archivo" name="archivo" type="file" accept="image/png, image/jpeg" required></label>
             </fieldset>
             <button>Limpiar</button>
             <button class="success">Solicitar</button>

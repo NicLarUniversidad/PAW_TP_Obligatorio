@@ -2,11 +2,9 @@
 
 namespace src\clinical\database\models;
 
-use src\clinical\database\QueryBuilder;
-
 class TurnoModel extends Model
 {
-    public static function findAll() : array {
+    /*public static function findAll() : array {
         $queryBuilder = Model::createQueryBuilder();
         $turno = new TurnoModel();
         return $queryBuilder->select($turno->tableFields)
@@ -21,7 +19,7 @@ class TurnoModel extends Model
             ->from("turnos")
             ->where(["id"=>$id])
             ->execute()[0];
-    }
+    }*/
 
     public function __construct()
     {
@@ -59,7 +57,7 @@ class TurnoModel extends Model
     }
 
     public function setHorario($day, $hour) : TurnoModel {
-        $value = $day . $hour;
+        $value = date($day . " " . $hour);
         $this->setField("horario_turno", $value);
         return $this;
     }
@@ -79,6 +77,4 @@ class TurnoModel extends Model
         $this->queryBuilder->delete("turnos")
             ->execute();
     }
-
-
 }
