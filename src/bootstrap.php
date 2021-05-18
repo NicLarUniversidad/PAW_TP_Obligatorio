@@ -13,7 +13,6 @@ use src\clinical\services\SessionService;
 use src\clinical\database\models\Model;
 use \Whoops\Run;
 use Whoops\Handler\PrettyPageHandler;
-use DI\ContainerBuilder;
 
 if(session_id() == ''){
     //session has not started
@@ -25,14 +24,6 @@ $whoops->register();
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__.'/../');
 $dotenv->load();
-
-$containerBuilder = new ContainerBuilder;
-try {
-    $containerBuilder->addDefinitions(__DIR__ . '/config.php');
-    $containerBuilder->build();
-} catch (Exception $e) {
-    echo "Falló inyector de dependencias";
-}
 
 $config = new ConfigService();
 
