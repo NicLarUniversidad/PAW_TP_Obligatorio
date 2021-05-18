@@ -60,3 +60,5 @@ $routerService->get('/profesionales','ProfesionalesController@get');
 $routerService->get('/nuevoTurno','NuevoTurnoController@get');
 $routerService->post('/nuevoTurno','NuevoTurnoController@post');
 $routerService->get('/listaTurnos','ListaTurnosController@get');
+$routerService->get('/login','LoginController@get');
+$routerService->post('/login','LoginController@post');

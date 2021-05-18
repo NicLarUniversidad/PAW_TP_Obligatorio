@@ -4,6 +4,7 @@ namespace src\clinical\controllers;
 
 use src\clinical\database\models\Model;
 use src\clinical\database\repositories\TurnoRepository;
+use src\clinical\services\FileService;
 
 class NuevoTurnoController extends Controller
 {
@@ -69,19 +70,9 @@ class NuevoTurnoController extends Controller
             $extension = pathinfo($archivo["name"], PATHINFO_EXTENSION);
             $file = "documentos/$medico/$dia/$horario.$extension";
             $path = "documentos/$medico/$dia";
-            if (!file_exists("documentos")){
-                mkdir("documentos");
-            }
-            if (!file_exists("documentos/$medico")){
-                mkdir("documentos/$medico");
-            }
-            if (!file_exists($path)){
-                mkdir($path);
-            }
-            if(!is_file($file)){
-                file_put_contents($file, file_get_contents($archivo['tmp_name']));
-            }
-            else {
+            $fileService = new FileService();
+            $saved = $fileService->save($medico, $path, $file, $archivo, file_get_contents($archivo['tmp_name']));
+            if(!$saved){
                 echo "Archivo ya existe";
                 return;
             }
