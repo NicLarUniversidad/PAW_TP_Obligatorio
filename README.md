@@ -27,6 +27,9 @@ Para correr el sistema se requiere:
     * Linux:
 
             phinx migrate -e development
+    
+* Configurar .env, se puede hacer basándose en .env.example.
+
 * Iniciar el servidor:
 
         php -S localhost:8081 -t public
