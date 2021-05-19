@@ -67,6 +67,19 @@ main>section>section>button {
     bottom: 3vh;
 }
 
+main>section>section>a {
+    position: absolute;
+    background-color: var(--button-sucess-color);
+    border-width: 0;
+    width: 20%;
+    height: 10%;
+    right: 3vw;
+    bottom: 3vh;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
 @media (max-width: 768px) {
     main>section>section>ul>li>a {
         text-decoration: none;
