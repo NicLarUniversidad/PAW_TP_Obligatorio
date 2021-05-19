@@ -3,6 +3,7 @@
 namespace src\clinical\database\models;
 
 use Monolog\Logger;
+use PDO;
 use src\clinical\database\QueryBuilder;
 use src\clinical\exceptions\IndexNotFoundException;
 use src\clinical\traits\TConnection;
@@ -14,9 +15,9 @@ class Model
     use TConnection;
 
     public static Logger $log;
-    public static \PDO $pdo;
+    public static PDO $pdo;
 
-    public static function init(Logger $log, \PDO $connection) {
+    public static function init(Logger $log, PDO $connection) {
         Model::$log = $log;
         Model::$pdo = $connection;
     }

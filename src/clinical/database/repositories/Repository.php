@@ -30,7 +30,7 @@ class Repository
         $turno = new $this->modelo();
         return $queryBuilder->select($turno->getTableFields())
             ->from($this->tabla)
-            ->execute();
+            ->execute($turno->getTableFields());
     }
 
     public function find($id): array {
@@ -57,5 +57,16 @@ class Repository
         $this->queryBuilder->delete($this->tabla)
             ->where(["id"=>$model->getTableFields()["id"]])
             ->execute();
+    }
+
+    public function getModelo() : ?string {
+        return $this->modelo;
+    }
+
+    public function createInstance(array $fields = []) : Model {
+        $className = $this->getModelo();
+        $model = new $className();
+        $model->setFields($fields);
+        return $model;
     }
 }

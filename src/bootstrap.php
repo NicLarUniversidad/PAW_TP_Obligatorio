@@ -67,3 +67,5 @@ $routerService->get('/login','LoginController@get');
 $routerService->post('/login','LoginController@post');
 $routerService->get('/registrarse','LoginController@getRegistrarse');
 $routerService->post('/registrarse','LoginController@postRegistrarse');
+$routerService->get('/gestion_medicos','MedicosController@get');
+$routerService->post('/gestion_medicos','MedicosController@post');

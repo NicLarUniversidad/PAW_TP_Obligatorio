@@ -97,8 +97,11 @@ class QueryBuilder
         return $this;
     }
 
-    public function execute(): array
+    public function execute(array $values = null): array
     {
+        if (!is_null($values)) {
+            $this->values = $values;
+        }
         $this->logger->info("Query: ".  $this->query);
         $sentencia = $this->pdo->prepare($this->query);
         foreach ($this->values as $field => $value) {

@@ -28,6 +28,8 @@
     --input-color: #5B76FF;
     --input-fonder-color: #ffffff;
     font-size: 20px;
+    --button-hover-color: #92ffb6;
+    --button-active-color: #4a6fff;
 }
 
 body {
@@ -172,6 +174,10 @@ footer {
     background-color: #4a6fff;
 }
 
+.pre-modal {
+    display: none;
+}
+
 body>header>p {
     position: absolute;
     top: 6vh;
@@ -186,6 +192,14 @@ body>header>p {
     padding:0.3vh 1vw;
     text-decoration:none;
     text-shadow:0px 1px 0px #273766;
+    cursor: pointer;
+}
+body>header>p:hover {
+    background-color: #abd3ff;
+}
+
+body>header>p:active {
+    background-color: #4a6fff;
 }
 
 @media (max-width: 768px) {
@@ -222,5 +236,16 @@ body>header>p {
     header > button {
         display: flex;
         float: right;
+    }
+
+    body>header>p {
+        top: 0;
+    }
+}
+
+
+@media (max-width: 400px) {
+    body>header>p {
+        display: none;
     }
 }

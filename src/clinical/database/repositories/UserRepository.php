@@ -7,7 +7,6 @@ namespace src\clinical\database\repositories;
 use Monolog\Logger;
 use PDO;
 use src\clinical\database\models\Model;
-use src\clinical\database\models\TurnoModel;
 use src\clinical\database\models\UserModel;
 use src\clinical\exceptions\IndexNotFoundException;
 

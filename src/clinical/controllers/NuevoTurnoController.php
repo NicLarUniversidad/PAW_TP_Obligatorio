@@ -19,7 +19,8 @@ class NuevoTurnoController extends Controller
     public function get() : void {
         $cssImports = Array();
         $cssImports[] = "nuevo-turno";
-        $this->pageFinderService->findFileRute("nuevoTurno","php","php", $cssImports);
+        $this->pageFinderService->findFileRute("nuevoTurno","php","php", $cssImports,
+            [], "Nuevo turno");
     }
 
     public function post() : void {
