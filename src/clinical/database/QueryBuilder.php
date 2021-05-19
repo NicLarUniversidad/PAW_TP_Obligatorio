@@ -7,6 +7,7 @@ use PDO;
 
 class QueryBuilder
 {
+    public static string $DATABASE_NAME = "";
     private PDO $pdo;
     private Logger $logger;
     private string $query;
@@ -22,7 +23,7 @@ class QueryBuilder
     public function select(Array $fields = []) : QueryBuilder {
         $this->query = "SELECT ";
         $primero = true;
-        foreach ($fields as $field) {
+        foreach ($fields as $field => $value) {
             if (! $primero) {
                 $this->query .= ",";
             } else {
@@ -34,12 +35,12 @@ class QueryBuilder
     }
 
     public function from(string $table) : QueryBuilder {
-        $this->query = " FROM $table";
+    $this->query .= " FROM `" . QueryBuilder::$DATABASE_NAME . "`.`$table`";
         return $this;
     }
 
     public function where(array $values = []) : QueryBuilder {
-        $this->query = " WHERE ";
+        $this->query .= " WHERE ";
         $this->values = $values;
         $primero = true;
         foreach ($this->values as $field => $value) {
@@ -48,13 +49,13 @@ class QueryBuilder
             } else {
                 $primero = false;
             }
-            $this->query = " :$field";
+            $this->query .= "$field = :$field";
         }
         return $this;
     }
 
     public function insert(string $table, array $values) : QueryBuilder {
-        $this->query = "INSERT INTO `paw`.`$table` (";
+        $this->query = "INSERT INTO `" . QueryBuilder::$DATABASE_NAME . "`.`$table` (";
         $this->values = $values;
         $postQuery = "(";
         $primero = true;
@@ -71,7 +72,7 @@ class QueryBuilder
             $postQuery .= " :$field";
             $dummy .= " $value";
         }
-        $this->logger->info("Prepared: $this->query $dummy)");
+        $this->logger->info("Prepared: $this->query) VALUES  $dummy)");
         $this->query .= ") VALUES " . $postQuery . ")";
         return $this;
     }

@@ -40,5 +40,13 @@ final class Migracion extends AbstractMigration
         $table = $this->table('obra_social');
         $table->addColumn('nombre', 'string')
             ->create();
+        $table = $this->table('usuario');
+        $table->addColumn('username', 'string')
+            ->addColumn('password', 'string')
+            ->addColumn('email', 'string', ['null' => true])
+            ->addColumn('nombre', 'string', ['null' => true])
+            ->addColumn('apellido', 'string', ['null' => true])
+            ->addColumn('cuil', 'string', ['null' => true])
+            ->create();
     }
 }

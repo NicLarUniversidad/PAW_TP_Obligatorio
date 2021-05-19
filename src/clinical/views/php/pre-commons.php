@@ -22,6 +22,14 @@
     <!--    <img src="/public/img/Logo.png" alt="Clinical" width="" height="">-->
     <address>Av. Corrientes 123 <small>Teléfono: 555-555-555</small></address>
     <h1>Clinical</h1>
+    <?php
+        if (isset($user)) {?>
+        <p>Bienvenido <?php echo $user["nombre"] ?></p>
+    <?php } else { ?>
+        <a href="/login" class="login_anchor">Login</a>
+    <?php
+        }
+    ?>
 </header>
 <main>
     <nav>
@@ -34,6 +42,12 @@
             <li><a href="nuevoTurno">Sacar un turno</a></li>
             <li><a href="listaTurnos">Listados de turnos solicitados</a></li>
         </ul>
+        <?php
+        if (isset($user)) {?>
+
+        <?php
+        }
+        ?>
     </nav>
     <!-- Agregar imagen de casita-->
     <a href="/"></a>

@@ -41,7 +41,11 @@ class Model
         return $this->tableFields;
     }
 
-    public function setField(String $field, String $value) : void {
+    public function setFields(array $fields) : void {
+        $this->tableFields = $fields;
+    }
+
+    protected function setField(String $field, String $value) : void {
         $this->tableFields[$field] = $value;
     }
 

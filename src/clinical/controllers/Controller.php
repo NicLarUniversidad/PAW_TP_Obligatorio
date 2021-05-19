@@ -24,5 +24,7 @@ class Controller
         $this->pageFinderService = new PageFinderService();
     }
 
-    public function init() {}
+    public function init() {
+        $this->pageFinderService->setSession($this->session);
+    }
 }

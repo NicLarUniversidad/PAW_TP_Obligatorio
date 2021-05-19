@@ -1,13 +1,15 @@
 <?php
 
+
 namespace src\clinical\traits;
 
-trait tSession {
+use src\clinical\services\SessionService;
 
-    public $session;
+trait TSession
+{
+    public SessionService $session;
 
-    public  function  setSession($session){
-        $this->session = $session;
+    public function setSession(SessionService $sessionService) {
+        $this->session = $sessionService;
     }
-
 }

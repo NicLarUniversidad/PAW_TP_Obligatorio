@@ -6,6 +6,7 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Dotenv\Dotenv;
 use src\clinical\database\ConnectionBuilder;
+use src\clinical\database\QueryBuilder;
 use src\clinical\services\ConfigService;
 use src\clinical\services\RequestService;
 use src\clinical\services\RouterService;
@@ -36,9 +37,11 @@ try {
     //ignore
 }
 
+
 $connectionBuilder = new ConnectionBuilder();
 $connectionBuilder->setLogger($log);
 $pdo = $connectionBuilder->make($config);
+QueryBuilder::$DATABASE_NAME = $config->get("DB_DBNAME")?? "";
 Model::init($log, $pdo);
 
 $whoops = new Run;
@@ -62,3 +65,5 @@ $routerService->post('/nuevoTurno','NuevoTurnoController@post');
 $routerService->get('/listaTurnos','ListaTurnosController@get');
 $routerService->get('/login','LoginController@get');
 $routerService->post('/login','LoginController@post');
+$routerService->get('/registrarse','LoginController@getRegistrarse');
+$routerService->post('/registrarse','LoginController@postRegistrarse');
