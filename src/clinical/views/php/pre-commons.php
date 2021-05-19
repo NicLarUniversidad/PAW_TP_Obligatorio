@@ -49,6 +49,7 @@
                 <li>Administración
                     <ul>
                         <li><a href="/gestion_medicos">Médicos</a></li>
+                        <li><a href="/gestion_obras_sociales">Obras sociales</a></li>
                     </ul>
                 </li>
             </ul>
