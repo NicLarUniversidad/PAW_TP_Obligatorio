@@ -3,9 +3,12 @@
 namespace src\clinical\controllers;
 
 use src\clinical\database\models\Model;
+use src\clinical\traits\TLogger;
 
 class NuevoTurnoController extends Controller
 {
+    use TLogger;
+
     public function get() : void {
         $cssImports = Array();
         $cssImports[] = "nuevo-turno";
@@ -14,19 +17,20 @@ class NuevoTurnoController extends Controller
 
     public function post() : void {
         $mensajeError = "";
-        if (is_null($this->request->get("apellido"))) {
+        
+        if (empty($this->request->get("apellido"))) {
             $mensajeError .= "Campo apellido está vacío\n";
         }
-        if (is_null($this->request->get("nombre"))) {
+        if (empty($this->request->get("nombre"))) {
             $mensajeError .= "Campo nombre está vacío\n";
         }
-        if (is_null($this->request->get("turno-medico"))) {
+        if (empty($this->request->get("turno-medico"))) {
             $mensajeError .= "Campo médico está vacío\n";
         }
-        if (is_null($this->request->get("fecha-turno"))) {
+        if (empty($this->request->get("fecha-turno"))) {
             $mensajeError .= "Campo fecha de turno está vacío\n";
         }
-        if (is_null($this->request->get("horario-turno"))) {
+        if (empty($this->request->get("horario-turno"))) {
             $mensajeError .= "Campo horario de turno está vacío\n";
         }
         if ($mensajeError == "") {
