@@ -1,0 +1,23 @@
+main>section {
+    border-width: medium;
+    background-color: white;
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 5vw white;
+    padding: 5vw;
+    border-radius: 10vw;
+    position: relative;
+}
+
+main>section>h2 {
+    width: 100%;
+    background: var(--base-color);
+    text-align: center;
+}
+
+form {
+    padding: 3vh 37.5%;
+    width: 25%;
+    background: var(--base-color);
+    display: flex;
+    flex-direction: column;
+}

@@ -9,3 +9,24 @@
 ## TP2:
 
 * Consignas: https://docs.google.com/document/d/1HvIJB_lH6pm-cDgj8y6AJtPXr_i5wDlToiXXgrcVhpQ
+
+
+## TP3:
+
+* Consignas: https://docs.google.com/document/d/1OaPIsRdc1pQ-N-6TLhcrsA-zzhx0Q4uYV_TGMx8bo60
+
+Para correr el sistema se requiere:
+* Instalar dependencias:
+
+        composer install
+* Migrar base de datos:
+
+    * Windows:
+
+            vendor\robmorgan\phinx\bin\phinx.bat migrate -e development
+    * Linux:
+
+            phinx migrate -e development
+* Iniciar el servidor:
+
+        php -S localhost:8081 -t public

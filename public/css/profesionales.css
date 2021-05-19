@@ -1,0 +1,102 @@
+main>section {
+    border-width: medium;
+    background-color: white;
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 5vw white;
+    padding: 5vw;
+    border-radius: 10vw;
+    position: relative;
+}
+
+main>section>h2 {
+    width: 100%;
+    background: var(--base-color);
+    text-align: center;
+}
+
+main>section>section {
+    background: var(--base-color);
+    position: relative;
+    border-radius: 3vw;
+}
+
+main>section>section>h3 {
+    text-align: center;
+}
+
+main>section>section>ul>li {
+    display: inline;
+}
+
+main>section>section>ul {
+    list-style: none;
+}
+
+main>section>section>ul>li>a {
+    text-decoration: none;
+    border: none;
+    font-size: var(--button-font-size);
+    padding: 6vh;
+    color: black;
+    background: #5B76FF;
+    width: 6vh;
+    height: 6vh;
+}
+
+main>section>section>p {
+    padding: 3vw;
+}
+
+main>section>section>img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main>section>section>button {
+    position: absolute;
+    background-color: var(--button-sucess-color);
+    border-width: 0;
+    width: 20%;
+    height: 10%;
+    right: 3vw;
+    bottom: 3vh;
+}
+
+main>section>section>a {
+    position: absolute;
+    background-color: var(--button-sucess-color);
+    border-width: 0;
+    width: 20%;
+    height: 10%;
+    right: 3vw;
+    bottom: 3vh;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    main>section>section>ul>li>a {
+        text-decoration: none;
+        border: none;
+        font-size: var(--button-font-size);
+        padding: 3vw;
+        color: black;
+        background: #5B76FF;
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .menu_desplegado {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100%;
+    }
+}
