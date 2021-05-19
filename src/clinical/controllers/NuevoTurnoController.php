@@ -5,6 +5,7 @@ namespace src\clinical\controllers;
 use src\clinical\database\models\Model;
 use src\clinical\database\repositories\TurnoRepository;
 use src\clinical\services\FileService;
+use src\clinical\services\MedicoService;
 
 class NuevoTurnoController extends Controller
 {
@@ -19,8 +20,13 @@ class NuevoTurnoController extends Controller
     public function get() : void {
         $cssImports = Array();
         $cssImports[] = "nuevo-turno";
+        $medicosService = new MedicoService($this->connection,$this->logger);
+        $medicos = $medicosService->findAll();
         $this->pageFinderService->findFileRute("nuevoTurno","php","php", $cssImports,
-            [], "Nuevo turno");
+            [
+                "medicos"=>$medicos
+            ],
+            "Nuevo turno");
     }
 
     public function post() : void {
@@ -67,9 +73,9 @@ class NuevoTurnoController extends Controller
             $medico = $this->request->get("turno-medico");
             $dia = $this->request->get("fecha-turno");
             $horario = $this->request->get("horario-turno");
-            $horario = str_replace(":", "", $horario);
+            $horarioFolder = str_replace(":", "", $horario);
             $extension = pathinfo($archivo["name"], PATHINFO_EXTENSION);
-            $file = "documentos/$medico/$dia/$horario.$extension";
+            $file = "documentos/$medico/$dia/$horarioFolder.$extension";
             $path = "documentos/$medico/$dia";
             $fileService = new FileService();
             $saved = $fileService->save($medico, $path, $file, $archivo, file_get_contents($archivo['tmp_name']));

@@ -24,8 +24,17 @@ require __DIR__ . "/pre-commons.php";
                 <legend>Turno</legend>
                 <label for="turno-medico">Médico
                     <select id="turno-medico" name="turno-medico" required>
-                        <option selected value="1">Juan</option>
-                        <option value="1">Pepe</option>
+                        <?php
+                        if (isset($data)) {
+                            if (array_key_exists("medicos", $data)) {
+                                foreach ($data["medicos"] as $medico) {
+                                    ?>
+                        <option value="<?php echo $medico["id"] ?>"><?php echo $medico["apellido"] . ", " . $medico["nombre"] ?></option>
+                                    <?php
+                                }
+                            }
+                        }
+                        ?>
                     </select></label>
                 <label for="fecha-turno">Fecha del turno
                     <input id="fecha-turno" name="fecha-turno" type="date" required></label>

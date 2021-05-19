@@ -7,6 +7,7 @@ class MedicoModel extends Model
 
     public function __construct()
     {
+        $this->setField("id", "");
         $this->setField("nombre", "");
         $this->setField("apellido", "");
         $this->setField("cuit", "");
