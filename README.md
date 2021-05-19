@@ -14,3 +14,16 @@
 ## TP3:
 
 * Consignas: https://docs.google.com/document/d/1OaPIsRdc1pQ-N-6TLhcrsA-zzhx0Q4uYV_TGMx8bo60
+
+Para correr el sistema se requiere ejecutar los comandos:
+
+        composer install
+Windows:
+
+        vendor\robmorgan\phinx\bin\phinx.bat migrate -e development
+Linux:
+
+        phinx migrate -e development
+Para iniciar el servidor se puede usar:
+
+        php -S localhost:8081 -t public
