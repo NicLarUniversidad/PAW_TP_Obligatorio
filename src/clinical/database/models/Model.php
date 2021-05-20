@@ -38,6 +38,11 @@ class Model
     protected array $tableFields = array();
     protected QueryBuilder $queryBuilder;
 
+    public function __construct()
+    {
+        $this->setField("id","");
+    }
+
     public function getTableFields() : array {
         return $this->tableFields;
     }

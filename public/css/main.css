@@ -30,6 +30,7 @@
     font-size: 20px;
     --button-hover-color: #92ffb6;
     --button-active-color: #4a6fff;
+    --button-sucess-color-hover: #325c51;
 }
 
 body {
