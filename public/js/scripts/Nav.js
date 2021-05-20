@@ -5,6 +5,12 @@ class Nav {
 
     loadNav() {
         this.nav = document.querySelector("main>nav");
+        const p = document.querySelector("header>p")
+        if (p) {
+            p.addEventListener("click", function (e) {
+
+            })
+        }
         this.nav.classList.add(this.nav_close);
         this.nav.addEventListener("onclick",this.mouse_click_event)
     }
