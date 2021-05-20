@@ -54,3 +54,5 @@ require __DIR__ . "/pre-commons.php";
     </section>
 <?php
 require __DIR__ . "/post-commons.php";
+?>
+<script src="js/scripts/Abm.js"></script>

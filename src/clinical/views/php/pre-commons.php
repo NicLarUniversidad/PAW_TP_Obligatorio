@@ -13,6 +13,7 @@
     <?php
     }
     ?>
+    <script src="js/App.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <?php
         if (isset($cssImports)) {

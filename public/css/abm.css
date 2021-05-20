@@ -53,3 +53,26 @@ main>section>form button {
     border-radius: 42px;
     margin-top: 4vh;
 }
+
+.hidden_modal {
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 12.5vw;
+    height: 50vh;
+    width: 50vw;
+    align-items: center;
+}
+
+.close_modal {
+    position: absolute;
+    top: 0;
+    right: 5vw;
+    height: 30px;
+    width: 30px;
+    background: url("../img/UI/close-icon-13577.png");
+    background-size: 30px;
+}

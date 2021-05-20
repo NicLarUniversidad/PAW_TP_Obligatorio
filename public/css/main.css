@@ -47,7 +47,7 @@ body>header {
     top: 0;
     left: 0;
     position: relative;
-    font-family: "Intro Regular" !important;
+    font-family: "Intro Regular", serif !important;
     
 }
 
@@ -147,14 +147,15 @@ footer {
     height: 10vh;
 }
 
-.login_anchor {
+body>header>p, .login_anchor {
     position: absolute;
     top: 6vh;
     right: 4vw;
     left: auto;
-    width: 6vw;
+    width: 10vw;
     height: 5vh;
     text-align: center;
+    background-image: none;
     background-color: #44adc7;
     border-radius:28px;
     border:1px solid #44adc7;
@@ -178,22 +179,6 @@ footer {
     display: none;
 }
 
-body>header>p {
-    position: absolute;
-    top: 6vh;
-    right: 4vw;
-    left: auto;
-    height: 5vh;
-    text-align: center;
-    background-color: #44adc7;
-    border-radius:28px;
-    border:1px solid #44adc7;
-    color:#ffffff;
-    padding:0.3vh 1vw;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #273766;
-    cursor: pointer;
-}
 body>header>p:hover {
     background-color: #abd3ff;
 }
