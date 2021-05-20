@@ -19,6 +19,8 @@ require __DIR__ . "/pre-commons.php";
                     <input id="fecha-nac" name="fecha-nac" type="date"></label>
                 <label for="edad">Edad
                     <input id="edad" name="edad" type="number" min="0"></label>
+                <label for="email">Email
+                    <input id="email" name="email" type="email"></label>
             </fieldset>
             <fieldset>
                 <legend>Turno</legend>

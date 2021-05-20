@@ -4,11 +4,31 @@ class Nav {
     nav_open = "nav_open";
 
     loadNav() {
+
+        function closeModal(modal) {
+            modal.classList.add("hidden_modal");
+            modal.classList.remove("modal");
+        }
+
+        function openModal(modal) {
+            modal.classList.add("modal");
+            modal.classList.remove("hidden_modal");
+        }
+
         this.nav = document.querySelector("main>nav");
-        const p = document.querySelector("header>p")
+        const p = document.querySelector("header>button")
+        const adminNavs = document.getElementsByClassName("pre-modal")
+        const adminNav = adminNavs.item(0)
+        adminNav.classList.add("hidden_modal")
         if (p) {
             p.addEventListener("click", function (e) {
-
+                if (adminNavs.length > 0) {
+                    if (adminNav.classList.contains("hidden_modal")) {
+                        openModal(adminNav)
+                    } else {
+                        closeModal(adminNav)
+                    }
+                }
             })
         }
         this.nav.classList.add(this.nav_close);

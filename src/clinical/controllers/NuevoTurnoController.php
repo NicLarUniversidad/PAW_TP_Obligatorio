@@ -35,6 +35,7 @@ class NuevoTurnoController extends Controller
         //return;
         $archivo = $_FILES['archivo'];
         $tel = $this->request->get("tel");
+        $mail = $this->request->get("email");
         if (is_null($this->request->get("apellido"))) {
             $mensajeError .= "Campo apellido está vacío\n";
         }
@@ -49,6 +50,12 @@ class NuevoTurnoController extends Controller
         }
         if (is_null($this->request->get("horario-turno"))) {
             $mensajeError .= "Campo horario de turno está vacío\n";
+        }
+        //TODO: validar esto
+        if (!is_null($mail)) {
+            if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+                $mensajeError .= "Mail con formato inválido\n";
+            }
         }
         if (!is_null($tel)) {
             //$valid = true; //TODO: quitar comentario...
