@@ -188,6 +188,11 @@ body>header>p:active {
     background-color: #4a6fff;
 }
 
+input:invalid, select:invalid {
+    /*TODO: cambiar el formato del mensaje por defecto*/
+    border-color: red;
+}
+
 @media (max-width: 768px) {
     body {
         position: relative;

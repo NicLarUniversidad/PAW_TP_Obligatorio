@@ -9,6 +9,7 @@ class UserModel extends Model
 
     public function __construct()
     {
+        parent::__construct();
         $this->setField("username", "");
         $this->setField("password", "");
         $this->setField("email", "");

@@ -30,15 +30,17 @@ class Amb
             const href = anchor.href;
             anchor.addEventListener("click", (e) => {
                 e.preventDefault()
-                fetch(href, {
-                    method:"DELETE"
-                })
-                    .then((data) => {
+                if (confirm("¿Desea borrar la entrada?")) {
+                    fetch(href, {
+                        method:"DELETE"
+                    })
+                        .then((data) => {
 
-                    })
-                    .catch(() => {
-                        alert("No se pudo borrar el registro")
-                    })
+                        })
+                        .catch(() => {
+                            alert("No se pudo borrar el registro")
+                        })
+                }
             })
         })
         section.appendChild(registerButton)

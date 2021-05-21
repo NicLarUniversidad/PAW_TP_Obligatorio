@@ -3,6 +3,7 @@
 namespace src\clinical\controllers;
 
 use src\clinical\database\models\Model;
+use src\clinical\database\models\TurnoModel;
 use src\clinical\database\repositories\TurnoRepository;
 use src\clinical\services\FileService;
 use src\clinical\services\MedicoService;
@@ -90,15 +91,20 @@ class NuevoTurnoController extends Controller
                 echo "Archivo ya existe";
                 return;
             }
-            $turno = Model::factory("TurnoModel");
-            $turno->setApellido($this->request->get("apellido"));
-            $turno->setNombre($this->request->get("nombre"));
-            $turno->setTel($this->request->get("tel"));
-            $turno->setFechaNacimiento($this->request->get("fecha-nac"));
-            $turno->setMedico($medico);
-            $turno->setHorario($dia, $horario);
-            $turno->save();
-            echo "Guardado";
+            $turno = $this->turnoRepository->createInstance();
+            if ($turno instanceof TurnoModel) {
+                $turno->setApellido($this->request->get("apellido"));
+                $turno->setNombre($this->request->get("nombre"));
+                $turno->setTel($this->request->get("tel"));
+                $turno->setFechaNacimiento($this->request->get("fecha-nac"));
+                $turno->setMedico($medico);
+                $turno->setHorario($dia, $horario);
+                $this->turnoRepository->save($turno);
+                echo "Guardado";
+            } else {
+                $this->logger->error("Se creó una instancia de un modelo diferente a TurnoModel");
+                http_response_code(500);
+            }
         }
         else {
             http_response_code(400);

@@ -51,7 +51,7 @@ class Model
         $this->tableFields = $fields;
     }
 
-    protected function setField(String $field, String $value) : void {
+    public function setField(String $field, String $value) : void {
         $this->tableFields[$field] = $value;
     }
 

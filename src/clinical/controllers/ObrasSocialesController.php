@@ -50,4 +50,8 @@ class ObrasSocialesController extends Controller
         }
         $this->abmGet();
     }
+
+    public function delete() {
+        //TODO: implementar
+    }
 }

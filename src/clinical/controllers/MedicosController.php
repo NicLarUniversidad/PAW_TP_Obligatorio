@@ -17,17 +17,17 @@ class MedicosController extends Controller
     public function get(string $notification = null) : void {
         $tuples = $this->service->findAll();
         $fields = [
-            [
+            "nombre" => [
                 "name"=>"nombre",
                 "type"=>"input",
                 "required"=>"true"
             ],
-            [
+            "apellido" => [
                 "name"=>"apellido",
                 "type"=>"input",
                 "required"=>"true"
             ],
-            [
+            "cuit" => [
                 "name"=>"cuit",
                 "type"=>"input",
                 "required"=>"false"
@@ -59,5 +59,9 @@ class MedicosController extends Controller
             }
         }
         $this->get($notification);
+    }
+
+    public function delete() {
+        //TODO: implementar
     }
 }
