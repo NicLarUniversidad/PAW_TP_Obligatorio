@@ -19,6 +19,8 @@ Para correr el sistema se requiere:
 * Instalar dependencias:
 
         composer install
+* Configurar .env, se puede hacer basándose en .env.example.
+
 * Migrar base de datos:
 
     * Windows:
@@ -28,8 +30,6 @@ Para correr el sistema se requiere:
 
             phinx migrate -e development
     
-* Configurar .env, se puede hacer basándose en .env.example.
-
 * Iniciar el servidor:
 
         php -S localhost:8081 -t public
