@@ -34,13 +34,13 @@ Para correr el sistema se requiere:
 
         php -S localhost:8081 -t public
 
-### Arquetipo
+### Arquetipo, estructura del proyecto.
 
 Paquete principal:
 
         src/clinical
 
-Se agruparon las clases que son llamadas por RouterService en la carpeta
+Se agruparon las clases que son llamadas por RouterService en
 
         src/clinical/controllers
 
