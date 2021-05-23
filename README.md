@@ -33,3 +33,41 @@ Para correr el sistema se requiere:
 * Iniciar el servidor:
 
         php -S localhost:8081 -t public
+
+### Arquetipo
+
+Paquete principal:
+
+        src/clinical
+
+Se agruparon las clases que son llamadas por RouterService en la carpeta
+
+        src/clinical/controllers
+
+Clases auxiliares que manejan la persistencia de datos
+
+        src/clinical/database
+
+Clases que tienen información de las entidades en la base de datos
+
+        src/clinical/database/models
+
+Clases que contienen la lógica de las operaciones que se realizan en la base de datos
+
+        src/clinical/database/repositories
+
+Excepciones
+
+        src/clinical/exceptions
+
+Clases con la lógica de la aplicación
+
+        src/clinical/services
+
+Traits
+
+        src/clinical/traits
+
+Vistas
+
+        src/clinical/views
