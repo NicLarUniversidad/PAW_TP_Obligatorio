@@ -1,7 +1,7 @@
 <?php
-namespace src\clinical\services;
+namespace src\clinical\config;
 
-class ConfigService {
+class Config {
     private array  $configs;
 
     public function __construct()

@@ -3,6 +3,7 @@
 namespace src\clinical\controllers;
 
 use src\clinical\database\models\Model;
+use src\clinical\database\models\TurnoModel;
 use src\clinical\database\repositories\TurnoRepository;
 use src\clinical\services\FileService;
 use src\clinical\services\MedicoService;
@@ -35,6 +36,7 @@ class NuevoTurnoController extends Controller
         //return;
         $archivo = $_FILES['archivo'];
         $tel = $this->request->get("tel");
+        $mail = $this->request->get("email");
         if (is_null($this->request->get("apellido"))) {
             $mensajeError .= "Campo apellido está vacío\n";
         }
@@ -49,6 +51,12 @@ class NuevoTurnoController extends Controller
         }
         if (is_null($this->request->get("horario-turno"))) {
             $mensajeError .= "Campo horario de turno está vacío\n";
+        }
+        //TODO: validar esto
+        if (!is_null($mail)) {
+            if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+                $mensajeError .= "Mail con formato inválido\n";
+            }
         }
         if (!is_null($tel)) {
             //$valid = true; //TODO: quitar comentario...
@@ -83,15 +91,20 @@ class NuevoTurnoController extends Controller
                 echo "Archivo ya existe";
                 return;
             }
-            $turno = Model::factory("TurnoModel");
-            $turno->setApellido($this->request->get("apellido"));
-            $turno->setNombre($this->request->get("nombre"));
-            $turno->setTel($this->request->get("tel"));
-            $turno->setFechaNacimiento($this->request->get("fecha-nac"));
-            $turno->setMedico($medico);
-            $turno->setHorario($dia, $horario);
-            $turno->save();
-            echo "Guardado";
+            $turno = $this->turnoRepository->createInstance();
+            if ($turno instanceof TurnoModel) {
+                $turno->setApellido($this->request->get("apellido"));
+                $turno->setNombre($this->request->get("nombre"));
+                $turno->setTel($this->request->get("tel"));
+                $turno->setFechaNacimiento($this->request->get("fecha-nac"));
+                $turno->setMedico($medico);
+                $turno->setHorario($dia, $horario);
+                $this->turnoRepository->save($turno);
+                echo "Guardado";
+            } else {
+                $this->logger->error("Se creó una instancia de un modelo diferente a TurnoModel");
+                http_response_code(500);
+            }
         }
         else {
             http_response_code(400);

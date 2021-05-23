@@ -4,14 +4,14 @@ namespace src\clinical\database;
 
 use PDO;
 use PDOException;
-use src\clinical\services\ConfigService;
+use src\clinical\config\Config;
 use src\clinical\traits\TLogger;
 
 class ConnectionBuilder
 {
     use TLogger;
 
-    public  function make(ConfigService $config):PDO
+    public  function make(Config $config):PDO
     {
         try {
             $adapter = $config->get('DB_ADAPTER');

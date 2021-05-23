@@ -5,9 +5,9 @@ require __DIR__. "/../vendor/autoload.php";
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Dotenv\Dotenv;
+use src\clinical\config\Config;
 use src\clinical\database\ConnectionBuilder;
 use src\clinical\database\QueryBuilder;
-use src\clinical\services\ConfigService;
 use src\clinical\services\RequestService;
 use src\clinical\services\RouterService;
 use src\clinical\services\SessionService;
@@ -26,7 +26,7 @@ $whoops->register();
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__.'/../');
 $dotenv->load();
 
-$config = new ConfigService();
+$config = new Config();
 
 $log = new Logger('Clinical');
 try {
@@ -69,5 +69,7 @@ $routerService->get('/registrarse','LoginController@getRegistrarse');
 $routerService->post('/registrarse','LoginController@postRegistrarse');
 $routerService->get('/gestion_medicos','MedicosController@get');
 $routerService->post('/gestion_medicos','MedicosController@post');
+$routerService->delete('/gestion_medicos','MedicosController@delete');
 $routerService->get('/gestion_obras_sociales','ObrasSocialesController@abmGet');
 $routerService->post('/gestion_obras_sociales','ObrasSocialesController@post');
+$routerService->delete('/gestion_obras_sociales','ObrasSocialesController@delete');

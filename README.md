@@ -19,6 +19,8 @@ Para correr el sistema se requiere:
 * Instalar dependencias:
 
         composer install
+* Configurar .env, se puede hacer basándose en .env.example.
+
 * Migrar base de datos:
 
     * Windows:
@@ -28,8 +30,44 @@ Para correr el sistema se requiere:
 
             phinx migrate -e development
     
-* Configurar .env, se puede hacer basándose en .env.example.
-
 * Iniciar el servidor:
 
         php -S localhost:8081 -t public
+
+### Arquetipo, estructura del proyecto.
+
+Paquete principal:
+
+        src/clinical
+
+Se agruparon las clases que son llamadas por RouterService en
+
+        src/clinical/controllers
+
+Clases auxiliares que manejan la persistencia de datos
+
+        src/clinical/database
+
+Clases que tienen información de las entidades en la base de datos
+
+        src/clinical/database/models
+
+Clases que contienen la lógica de las operaciones que se realizan en la base de datos
+
+        src/clinical/database/repositories
+
+Excepciones
+
+        src/clinical/exceptions
+
+Clases con la lógica de la aplicación
+
+        src/clinical/services
+
+Traits
+
+        src/clinical/traits
+
+Vistas
+
+        src/clinical/views
