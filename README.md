@@ -71,3 +71,7 @@ Traits
 Vistas
 
         src/clinical/views
+
+## TP4:
+
+* Consignas: https://docs.google.com/document/d/1_J28aWqV1XHemlGJ0r7KT_zMdJPP_y7Q3KInprGjC54
