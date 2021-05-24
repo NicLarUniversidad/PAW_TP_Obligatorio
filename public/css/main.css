@@ -234,6 +234,40 @@ input:invalid, select:invalid {
     }
 }
 
+.hidden_admin_menu, .hidden_submenu, main>header>nav>ul>li>ul>li {
+    display: none;
+}
+
+.visible_admin_menu {
+    display : block;
+    position: absolute;
+    top: 3vh;
+    right: 5vw;
+    left: unset;
+    width: 25vw;
+    height: 50vh;
+    background: var(--base-color);
+    z-index: 1000;
+    box-sizing: inherit;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
+}
+
+.visible_admin_menu>ul>li {
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    font-size: var(--font-size);
+}
 
 @media (max-width: 400px) {
     body>header>p {

@@ -41,12 +41,10 @@
     <?php
         }
     ?>
-</header>
-<main>
     <?php
     if (isset($user)) {?>
-        <section class="pre-modal">
-            <ul class="modal">
+        <nav>
+            <ul>
                 <li>Administración
                     <ul>
                         <li><a href="/gestion_medicos">Médicos</a></li>
@@ -54,10 +52,12 @@
                     </ul>
                 </li>
             </ul>
-        </section>
+        </nav>
         <?php
     }
     ?>
+</header>
+<main>
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
