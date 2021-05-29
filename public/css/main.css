@@ -28,8 +28,6 @@
     --input-color: #5B76FF;
     --input-fonder-color: #ffffff;
     font-size: 20px;
-    --button-hover-color: #92ffb6;
-    --button-active-color: #4a6fff;
 }
 
 body {
@@ -59,7 +57,7 @@ body>header>h1 {
 }
 
 body>header>a {
-    background-image: url("/img/Logo.png");
+    background-image: url("/resources/img/Logo.png");
     background-size: var(--logo-size)var(--logo-size);
     display: inline-block;
     width: var(--logo-size);
@@ -146,63 +144,10 @@ footer {
     width: 100%;
     height: 10vh;
 }
-
-.login_anchor {
-    position: absolute;
-    top: 6vh;
-    right: 4vw;
-    left: auto;
-    width: 6vw;
-    height: 5vh;
-    text-align: center;
-    background-color: #44adc7;
-    border-radius:28px;
-    border:1px solid #44adc7;
-    /*display:inline-block;*/
-    cursor:pointer;
-    color:#ffffff;
-    padding:1vw 1vh;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #273766;
-}
-
-.login_anchor:hover {
-    background-color: #abd3ff;
-}
-
-.login_anchor:active {
-    background-color: #4a6fff;
-}
-
-.pre-modal {
-    display: none;
-}
-
-body>header>p {
-    position: absolute;
-    top: 6vh;
-    right: 4vw;
-    left: auto;
-    height: 5vh;
-    text-align: center;
-    background-color: #44adc7;
-    border-radius:28px;
-    border:1px solid #44adc7;
-    color:#ffffff;
-    padding:0.3vh 1vw;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #273766;
-    cursor: pointer;
-}
-body>header>p:hover {
-    background-color: #abd3ff;
-}
-
-body>header>p:active {
-    background-color: #4a6fff;
-}
-
 @media (max-width: 768px) {
+    :root{
+        --button-font-size: 15px;
+    }  
     body {
         position: relative;
     }
@@ -225,9 +170,22 @@ body>header>p:active {
     }
 
     body>main>nav {
-        display: none;
+        /*display: block;*/
+        display:none;
+        width: auto;
+        height: auto;
     }
+    body>main>nav>ul{
+        margin: 1rem 1rem;
+        justify-content: center;
+        display: block;
+        padding: 1em;
 
+    }
+    body>main>nav>ul>li{
+        text-align: center;
+        display: block;
+    }
     body>header>h1 {
         font-size: 3vh;
         top: 3vh;
@@ -236,16 +194,5 @@ body>header>p:active {
     header > button {
         display: flex;
         float: right;
-    }
-
-    body>header>p {
-        top: 0;
-    }
-}
-
-
-@media (max-width: 400px) {
-    body>header>p {
-        display: none;
     }
 }
