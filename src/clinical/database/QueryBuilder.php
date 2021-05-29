@@ -102,7 +102,6 @@ class QueryBuilder
     {
         if (!is_null($values)) {
             $this->values = $values;
-            var_dump("No es null");
         }
         $this->logger->info("Query: ".  $this->query);
         $sentencia = $this->pdo->prepare($this->query);

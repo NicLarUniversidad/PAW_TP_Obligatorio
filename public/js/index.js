@@ -1,10 +1,7 @@
-function showMenu() {
-  console.log("Hello word");
-  var menu = document.getElementById("menu");
-  console.log(menu);   
-  if (menu.style.display === "block") {
-      menu.style.display = "none";
-  } else {
-      menu.style.display = "block";
-  }
+function cambiarClase(){
+  let siteNav = document.getElementById('site-nav');
+      siteNav.classList.toggle('site-nav-open');
+  let menuOpen = document.getElementById('menu');
+      menuOpen.classList.toggle('menu');    
+      
 }

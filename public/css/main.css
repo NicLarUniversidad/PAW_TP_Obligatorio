@@ -98,6 +98,14 @@ main>nav {
     left: 0;
     /*position: absolute;*/
 }
+/*.menu{
+    background-color: var(--navegation-color);
+    width: 100%;
+    height: var(--navegation-widh);
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}*/
 main>nav>ul {
     list-style: none;
 }
@@ -144,6 +152,9 @@ footer {
     width: 100%;
     height: 10vh;
 }
+.site-nav-open{
+    display: block;
+}
 @media (max-width: 768px) {
     :root{
         --button-font-size: 15px;
@@ -168,9 +179,16 @@ footer {
     body>header>address {
         font-size: 0;
     }
-
-    body>main>nav {
-        /*display: block;*/
+    .menu{
+        margin: 1rem 1rem;
+        justify-content: center;
+        display: block;
+        padding: 1em;
+    }
+    .site-nav-open{
+        height: auto;
+    }
+    body>main>nav {        
         display:none;
         width: auto;
         height: auto;
