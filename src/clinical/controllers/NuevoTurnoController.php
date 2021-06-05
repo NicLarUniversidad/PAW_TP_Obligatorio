@@ -21,13 +21,15 @@ class NuevoTurnoController extends Controller
     public function get() : void {
         $cssImports = Array();
         $cssImports[] = "nuevo-turno";
+        $jsImports = Array();
+        $jsImports[] = "Turno";
         $medicosService = new MedicoService($this->connection,$this->logger);
         $medicos = $medicosService->findAll();
         $this->pageFinderService->findFileRute("nuevoTurno","php","php", $cssImports,
             [
                 "medicos"=>$medicos
             ],
-            "Nuevo turno");
+            "Nuevo turno", $jsImports);
     }
 
     public function post() : void {

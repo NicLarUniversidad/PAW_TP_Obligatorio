@@ -24,6 +24,15 @@
             }
         }
     ?>
+    <?php
+    if (isset($jsImports)) {
+        foreach ($jsImports as $jsImport) {
+            ?>
+            <script src="/js/scripts/<?php echo $jsImport?>.js" ></script>
+            <?php
+        }
+    }
+    ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

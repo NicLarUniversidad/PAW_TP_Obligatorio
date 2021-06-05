@@ -1,6 +1,7 @@
 main>section {
     border-width: medium;
-    background-color: var(--base-color);
+    //background-color: var(--base-color);
+    background-color: white;
     background-clip: content-box;
     box-shadow: inset 0 0 0 5vw white;
     padding: 5vw;
@@ -10,6 +11,7 @@ main>section {
 
 main>section h2 {
     text-align:center;
+    color: var(--base-color);
 }
 
 main>section>form {
@@ -33,11 +35,14 @@ main>section>form>fieldset {
 /*    height: 0;*/
 /*    font-size: 0;*/
 /*}*/
+main>section>form select, main>section>form input {
+    background-color: gray;
+}
 
 main>section>form input {
     width: 100%;
     max-height: 3vh;
-    background-color: var(--input-color);
+    /*background-color: var(--input-color);*/
     border-color: var(--input-color);
     color: var(--input-fonder-color);
     outline: 0;
@@ -57,7 +62,7 @@ main>section>form label {
 main>section>form select {
     width: 100%;
     max-height: 3vh;
-    background-color: var(--input-color);
+    /*background-color: var(--input-color);*/
     border-color: var(--input-color);
     color: var(--input-fonder-color);
 }
