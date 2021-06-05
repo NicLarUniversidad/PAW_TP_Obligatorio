@@ -3,8 +3,8 @@ namespace src\clinical\services;
 
 use Exception;
 use src\clinical\exceptions\PageNotFoundException;
-use src\clinical\traits\tSession;
-use src\clinical\traits\tRequest;
+use src\clinical\traits\TSession;
+use src\clinical\traits\TRequest;
 use src\clinical\traits\TLogger;
 use src\clinical\traits\TConnection;
 

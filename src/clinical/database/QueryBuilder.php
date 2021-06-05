@@ -105,7 +105,7 @@ class QueryBuilder
         $this->logger->info("Query: ".  $this->query);
         $sentencia = $this->pdo->prepare($this->query);
         foreach ($this->values as $field => $value) {
-            $sentencia->bindValue(":$field", $value);
+            $sentencia->bindValue(":$field",$value);
         }
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute();

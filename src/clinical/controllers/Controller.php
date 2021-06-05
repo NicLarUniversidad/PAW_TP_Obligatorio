@@ -7,8 +7,8 @@ namespace src\clinical\controllers;
 use src\clinical\services\PageFinderService;
 use src\clinical\traits\TConnection;
 use src\clinical\traits\TLogger;
-use src\clinical\traits\tRequest;
-use src\clinical\traits\tSession;
+use src\clinical\traits\TRequest;
+use src\clinical\traits\TSession;
 
 class Controller
 {
