@@ -30,6 +30,9 @@ require __DIR__ . "/pre-commons.php";
                     <th scope="col"><?php echo $tuple[$field["name"]] ?></th>
                         <?php
                     }
+                    ?>
+                    <th scope="col"><a href='<?php echo $data["register-url"] . "?id=" . $tuple["id"]; ?>'>Eliminar</a></th>
+                    <?php
                     echo "                </tr>";
                 }
             ?>
@@ -54,3 +57,5 @@ require __DIR__ . "/pre-commons.php";
     </section>
 <?php
 require __DIR__ . "/post-commons.php";
+?>
+<script src="js/scripts/Abm.js"></script>

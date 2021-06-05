@@ -36,7 +36,6 @@ class QueryBuilder
 
     public function from(string $table) : QueryBuilder {
     $this->query .= " FROM `" . QueryBuilder::$DATABASE_NAME . "`.`$table`";
-        //$this->query .= " FROM " . QueryBuilder::$DATABASE_NAME . $table;
         return $this;
     }
 
@@ -102,18 +101,12 @@ class QueryBuilder
     {
         if (!is_null($values)) {
             $this->values = $values;
-            var_dump("No es null");
         }
         $this->logger->info("Query: ".  $this->query);
         $sentencia = $this->pdo->prepare($this->query);
-        //var_dump($sentencia);
-        //var_dump($this->values);
-        if (str_contains($this->query,"WHERE")){
-            foreach ($this->values as $field => $value) {
-                $sentencia->bindValue(":$field",$value);
-            }
+        foreach ($this->values as $field => $value) {
+            $sentencia->bindValue(":$field",$value);
         }
-        /**/
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute();
         return $sentencia->fetchAll();

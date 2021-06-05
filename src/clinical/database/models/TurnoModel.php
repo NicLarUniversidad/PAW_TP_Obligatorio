@@ -23,6 +23,7 @@ class TurnoModel extends Model
 
     public function __construct()
     {
+        parent::__construct();
         $this->setField("id_medico", "");
         $this->setField("nombre_paciente", "");
         $this->setField("apellido_paciente", "");

@@ -26,17 +26,15 @@ class Repository
         $this->modelo = "src\\clinical\\database\\models\\" . $modelo;
     }
     public function findAll() : array {
-        $queryBuilder = Model::createQueryBuilder();
-        $turno = new $this->modelo();
-        return $queryBuilder->select($turno->getTableFields())
+        $model = new $this->modelo();
+        return $this->queryBuilder->select($model->getTableFields())
             ->from($this->tabla)
-            ->execute($turno->getTableFields());
+            ->execute($model->getTableFields());
     }
 
     public function find($id): array {
-        $queryBuilder = Model::createQueryBuilder();
-        $turno = new $this->modelo();
-        return $queryBuilder->select($turno->getTableFields())
+        $model = new $this->modelo();
+        return $this->queryBuilder->select($model->getTableFields())
             ->from($this->tabla)
             ->where(["id"=>$id])
             ->execute();
@@ -63,10 +61,12 @@ class Repository
         return $this->modelo;
     }
 
-    public function createInstance(array $fields = []) : Model {
+    public function createInstance(array $fields = null) : Model {
         $className = $this->getModelo();
         $model = new $className();
-        $model->setFields($fields);
+        if (!is_null($fields)) {
+            $model->setFields($fields);
+        }
         return $model;
     }
 }

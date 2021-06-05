@@ -19,6 +19,7 @@ class RouterService{
         "GET" =>[],
         "POST"=>[],
         "PUT"=>[],
+        "DELETE"=>[],
     ];
 
     public function loadRoutes($path, $action, $method = "GET") {
@@ -35,6 +36,10 @@ class RouterService{
 
     public function put($path,$action) {
         $this->loadRoutes($path,$action,"PUT");
+    }
+
+    public function delete($path,$action) {
+        $this->loadRoutes($path,$action,"DELETE");
     }
 
     public function exist ($path,$method) {
@@ -67,15 +72,21 @@ class RouterService{
 
     public function  direct() {
         list($path, $http_method) = $this->request->route();
-        list($controller, $method) = $this->getController($path,$http_method);
-        $this->logger
-            ->info(
-                "Status Code: 200",
-                [
-                    "Path"=>$path,
-                    "Method" =>$http_method,
-                ]
-            );
-        $this->call($controller,$method);
+        try {
+            list($controller, $method) = $this->getController($path, $http_method);
+            $this->logger
+                ->info(
+                    "Status Code: 200",
+                    [
+                        "Path"=>$path,
+                        "Method" =>$http_method,
+                    ]
+                );
+            $this->call($controller,$method);
+        } catch (PageNotFoundException $e) {
+            $this->call("ProblemsController","pageNotFound");
+        } catch (Exception $ex) {
+            $this->call("ProblemsController","serverInternalError");
+        }
     }
 }
