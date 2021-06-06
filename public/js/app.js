@@ -9,12 +9,17 @@ class appPAW{
 
 
         //Inicializar la funcionalidad carrousell
-        // PAW.cargarScript("PAW-Menu", "/paw-menu.js", () => {
-        //     document.addEventListener("DO MContentLoaded",()=>{
-        //         let menu = new PAWMenu();
-        //     })
-        // });
-
+        document.addEventListener("DOMContentLoaded",()=>{
+         PAW.cargarScript("Carousel", "js/components/Carousel.js", () => {             
+                let listaImagenes =[
+                    "img/imagen1.jpg",
+                    "img/imagen2.jpg",
+                    "img/imagen3.jpg",
+                    "img/imagen4.jpg"
+                ]
+                let carousel = new Carousel(listaImagenes, 'aside');
+             })
+         });
 
     }
 }
