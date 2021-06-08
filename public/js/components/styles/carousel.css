@@ -4,13 +4,44 @@
     font-size: 15px;
 }
 .carousel {
-    display:none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    left: 0;
-    position: absolute;
+  display:none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  position: absolute;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
 }
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .button-left, .button-right {cursor:pointer}
 .button-right, .button-left{ 
   position: absolute;
@@ -37,6 +68,42 @@
   90deg
   ,rgb(43, 29, 175) 0%, rgba(0,0,0,0) 100%);
 }
+
+.button-right::after{
+  right: 0;
+  transform: translateY(0.5vh) rotate(-50deg);
+}
+
+.button-left::after{
+  left: 0;
+  transform: translateY(0.5vh) rotate(-130deg);
+}
+.button-right::before{
+  top: 45%;
+  right: 0;
+  transform: rotate(50deg);
+}
+.button-left::before{
+  top: 45%;
+  left: 0;
+  transform: rotate(130deg);
+}
+
+.button-right::before,
+.button-right::after,
+.button-left::before,
+.button-left::after {
+	
+	position: absolute;
+	content: " ";
+	width: 2rem;
+	height: 0.2rem;
+	background-color: white;
+    border-radius: 0.2rem;
+    
+}
+
+
 .progressBar, .progress{
     position: absolute;
     left: 0;

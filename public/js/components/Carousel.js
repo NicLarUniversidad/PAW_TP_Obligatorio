@@ -98,7 +98,7 @@ class Carousel{
             this.slideIndex = this.listaImagenes.length -1;
         }
         circulos[this.slideIndex].classList.add("active");
-        carousel[this.slideIndex].style.display = "block";
+        carousel[this.slideIndex].style.display = "block";    
     }
     ocultarImagenes(length, carousel){
         for (let i = 0; i < length; i++) {
