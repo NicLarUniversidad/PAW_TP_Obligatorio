@@ -5,10 +5,10 @@
     <title>Clinical</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/home.css" />
-    <link rel="stylesheet" type="text/css" href="css/carousel.css" />
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/Carousel.js"></script>	
+    <script src="js/components/paw.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>    
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 <header>
@@ -17,10 +17,11 @@
 <!--    <img src="/resources/img/Logo.png" alt="Clinical" width="" height="">-->
     <address>Av. Corrientes 123  <small>Teléfono: 555-555-555</small></address>
     <h1>Clinical</h1>
-    <button onclick="cambiarClase()">X</button>
+    <button id="button-menu" class="PAW-Menu-Abrir"></button>    
 </header>
 <main>
-    <nav id="site-nav">
+    
+    <nav id="site-nav">        
         <ul id="menu">
             <li><a href="/">Home</a></li>
             <li><a href="institucional">Institucional</a></li>
@@ -33,9 +34,9 @@
     </nav>
     <!-- Agregar imagen de casita-->
     <section>
-<aside class="content display-container" >
-  </aside>
-</section>
+        <aside class="content display-container" >
+        </aside>
+    </section>
             <!-- Agregar parte no genérica acá abajo-->
             <section>
                 <h2>Noticias</h2>
@@ -79,34 +80,6 @@
             <small>Contáctese con nosotros</small>
             <small>Legal</small>
         </footer>
-        <script>
-            var slideIndex = 1;
-            showDivs(slideIndex);
-            
-            function plusDivs(n) {
-              showDivs(slideIndex += n);
-            }
-            
-            function currentDiv(n) {
-              showDivs(slideIndex = n);
-            }
-            
-            function showDivs(n) {
-              var i;
-              var x = document.getElementsByClassName("mySlides");
-              var dots = document.getElementsByClassName("demo");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-white", "");
-              }
-              x[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " w3-white";
-            }
-            </script>
     </body>
 
 </html>
