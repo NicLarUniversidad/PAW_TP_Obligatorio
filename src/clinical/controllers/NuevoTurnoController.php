@@ -33,7 +33,6 @@ class NuevoTurnoController extends Controller
             ],
             "Nuevo turno", $jsImports);
     }
-
     public function post() : void {
         $mensajeError = "";
         //var_dump($_FILES);

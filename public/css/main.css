@@ -28,6 +28,14 @@
     --input-color: #5B76FF;
     --input-fonder-color: #ffffff;
     font-size: 20px;
+    	/*Variables PAW */
+	--paw-verde-oscuro: #1d6625;
+	--paw-verde-medio-oscuro: #3f8434;
+	--paw-verde-medio-claro: #65af26;
+	--paw-verde-claro: #84bf51;
+	--paw-amarillo: #fbc808;
+	--paw-amarillo-oscuro: orange;
+	--paw-rojo: #b0291e;
     --button-hover-color: #92ffb6;
     --button-active-color: #4a6fff;
     --button-sucess-color-hover: #325c51;
@@ -47,20 +55,20 @@ body>header {
     padding: 0;
     top: 0;
     left: 0;
-    /*position: relative;*/
-    font-family: "Intro Regular", serif !important;
+    position: relative;
+    font-family: "Intro Regular" !important;
     
 }
 
 body>header>h1 {
     position: absolute;
-    top: 3vw;
-    left: 25vh;
+    bottom: 0;
+    left: 12vh;
     padding: 0;
 }
 
 body>header>a {
-    background-image: url("/img/Logo.png");
+    background-image: url("/resources/img/Logo.png");
     background-size: var(--logo-size)var(--logo-size);
     display: inline-block;
     width: var(--logo-size);
@@ -84,6 +92,7 @@ body>main {
     left: 0;
     width: 100%;
     height: 100vh - var(--header-widh);
+    overflow: auto;
     /*overflow: scroll;*/
 }
 
@@ -98,9 +107,17 @@ main>nav {
     overflow: hidden;
     padding: 0;
     top: 0;
-    left: 0;
+    right: 0;
     /*position: absolute;*/
 }
+/*.menu{
+    background-color: var(--navegation-color);
+    width: 100%;
+    height: var(--navegation-widh);
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}*/
 main>nav>ul {
     list-style: none;
 }
@@ -193,7 +210,16 @@ input:invalid, select:invalid {
     border-color: red;
 }
 
+/* .site-nav-open{
+    display: block;
+} */
 @media (max-width: 768px) {
+    :root{
+        --button-font-size: 15px;
+    }
+    main>nav{
+        float: right;
+    }
     body {
         position: relative;
     }
@@ -214,11 +240,31 @@ input:invalid, select:invalid {
     body>header>address {
         font-size: 0;
     }
-
-    body>main>nav {
-        display: none;
+    /* .menu{
+        margin: 1rem 1rem;
+        justify-content: center;
+        display: block;
+        padding: 1em;
     }
+    .site-nav-open{
+        height: auto;
+    } */
+    /* body>main>nav {
+        display:none;
+        width: auto;
+        height: auto;
+    }
+    body>main>nav>ul{
+        margin: 1rem 1rem;
+        justify-content: center;
+        display: block;
+        padding: 1em;
 
+    }
+    body>main>nav>ul>li{
+        text-align: center;
+        display: block;
+    }
     body>header>h1 {
         font-size: 3vh;
         top: 3vh;
@@ -227,11 +273,7 @@ input:invalid, select:invalid {
     header > button {
         display: flex;
         float: right;
-    }
-
-    body>header>p {
-        top: 0;
-    }
+    } */
 }
 
 .hidden_submenu, main>header>nav>ul>li>ul>li {

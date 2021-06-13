@@ -15,6 +15,7 @@
     ?>
     <script src="js/App.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="js/index.js"></script>
     <?php
         if (isset($cssImports)) {
             foreach ($cssImports as $cssImport) {

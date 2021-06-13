@@ -5,19 +5,24 @@
     <title>Clinical</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <script src="js/components/paw.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>    
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 <header>
     <!-- Logo -->
     <a href="/"></a>
 <!--    <img src="/resources/img/Logo.png" alt="Clinical" width="" height="">-->
-    <address>Av. Corrientes 123 <small>Teléfono: 555-555-555</small></address>
+    <address>Av. Corrientes 123  <small>Teléfono: 555-555-555</small></address>
     <h1>Clinical</h1>
+    <button id="button-menu" class="PAW-Menu-Abrir"></button>    
 </header>
 <main>
-    <nav>
-        <ul>
+    
+    <nav id="site-nav">        
+        <ul id="menu">
             <li><a href="/">Home</a></li>
             <li><a href="institucional">Institucional</a></li>
             <li><a href="noticias">Noticias</a></li>
@@ -28,7 +33,10 @@
         </ul>    	
     </nav>
     <!-- Agregar imagen de casita-->
-    <a href="home"></a>
+    <section>
+        <aside class="content display-container" >
+        </aside>
+    </section>
             <!-- Agregar parte no genérica acá abajo-->
             <section>
                 <h2>Noticias</h2>
@@ -41,7 +49,7 @@
                 </section>
                 <section>
                     <h3>Vacunación COVID 19</h3>
-                    <img class ="imagen">
+                    <img class ="imagen">                    
                     <p>La vacunación se llevará a cabo en etapas de acuerdo a los grupos establecidos y se realizará en forma gratuita, equitativa y voluntaria.
                         <a href=""> Ver +</a>
                     </p>
@@ -73,4 +81,5 @@
             <small>Legal</small>
         </footer>
     </body>
+
 </html>

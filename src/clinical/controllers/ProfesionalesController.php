@@ -18,9 +18,17 @@ class ProfesionalesController extends Controller
     }
 
     public function get() : void {
-        $medicos = $this->service->findAll();
-        $this->pageFinderService->findFileRute("profesionales","php","php",["profesionales"],
-        ["medicos"=>$medicos],
-        "Profesionales");
+        $id = $this->request->get('id');
+        if (isset($id)){
+            $medico= $this->service->find($id);
+            $this->pageFinderService->findFileRute("profesional","php","php",["profesional"],
+            ["medico"=>$medico],
+            "Profesional");
+        }else{
+            $medicos = $this->service->findAll();
+            $this->pageFinderService->findFileRute("profesionales","php","php",["profesionales"],
+            ["medicos"=>$medicos],
+            "Profesionales");
+        }    
     }
 }

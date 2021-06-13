@@ -19,7 +19,7 @@ main>section>h2 {
 
 main>section>section {
     background: var(--base-color);
-    position: relative;
+    /*position: relative;*/
     border-radius: 1vw;
     margin: 2vw 0;
     display: block;
@@ -106,7 +106,7 @@ main>section>a {
     color: white;
     text-align: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     header>h1 {
         color: #ffffff;
     }
