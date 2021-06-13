@@ -23,6 +23,8 @@ class NuevoTurnoController extends Controller
         $cssImports[] = "nuevo-turno";
         $jsImports = Array();
         $jsImports[] = "Turno";
+        $jsImports[] = "Calendario";
+        $jsImports[] = "DropFile";
         $medicosService = new MedicoService($this->connection,$this->logger);
         $medicos = $medicosService->findAll();
         $this->pageFinderService->findFileRute("nuevoTurno","php","php", $cssImports,

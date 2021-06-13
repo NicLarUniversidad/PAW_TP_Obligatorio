@@ -22,7 +22,7 @@ require __DIR__ . "/pre-commons.php";
                 <label for="email">Email
                     <input id="email" name="email" type="email"></label>
             </fieldset>
-            <fieldset>
+            <fieldset id="field-set-turno">
                 <legend>Turno</legend>
                 <label for="turno-medico">Médico
                     <select id="turno-medico" name="turno-medico" required>
@@ -39,9 +39,9 @@ require __DIR__ . "/pre-commons.php";
                         ?>
                     </select></label>
                 <label for="fecha-turno">Fecha del turno
-                    <input id="fecha-turno" name="fecha-turno" type="date" required></label>
+                    <input id="fecha-turno" name="fecha-turno" required readonly></label>
                 <label for="horario-turno">Horario del turno
-                    <input id="horario-turno" name="horario-turno" type="time" required></label>
+                    <input id="horario-turno" name="horario-turno" type="time" required readonly></label>
                 <label for="archivo">Archivo
                     <input id="archivo" name="archivo" type="file" accept="image/png, image/jpeg" required></label>
             </fieldset>

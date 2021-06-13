@@ -19,28 +19,30 @@ class Nav {
         const p = document.querySelector("header>p")
         const adminNav = document.querySelector("body>header>nav")
         // const adminNav = adminNavs.item(0)
-        adminNav.classList.add("hidden_admin_menu")
-        const lis = document.querySelectorAll("body>header>nav>ul")
-        if (p) {
-            p.addEventListener("click", function (e) {
-                //if (adminNavs.length > 0) {
+        if (adminNav) {
+            adminNav.classList.add("hidden_admin_menu")
+            const lis = document.querySelectorAll("body>header>nav>ul")
+            if (p) {
+                p.addEventListener("click", function (e) {
+                    //if (adminNavs.length > 0) {
                     if (adminNav.classList.contains("hidden_admin_menu")) {
                         openModal(adminNav)
                     } else {
                         closeModal(adminNav)
                     }
-                //}
+                    //}
+                })
+            }
+            this.nav.classList.add(this.nav_close);
+            this.nav.addEventListener("onclick",this.mouse_click_event)
+            lis.forEach((node, index, pepe) => {
+                try {
+                    node.classList.add("hidden_submenu")
+                } catch (e) {
+
+                }
             })
         }
-        this.nav.classList.add(this.nav_close);
-        this.nav.addEventListener("onclick",this.mouse_click_event)
-        lis.forEach((node, index, pepe) => {
-            try {
-                node.classList.add("hidden_submenu")
-            } catch (e) {
-
-            }
-        })
        /* lis.childNodes.item(1).
         lis.addEventListener("enter", () => {
 
