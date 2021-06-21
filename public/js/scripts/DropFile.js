@@ -25,7 +25,6 @@ class DropFile {
                 e.preventDefault();
                 let entrada = document.querySelector("input[name='archivo']");
                 entrada.files=e.dataTransfer.files;
-                console.log(entrada.files);
                 toggleDropBox()
             }
         }

@@ -291,21 +291,22 @@ class Turno {
         if (buttons.length > 0 ) {
             const button = buttons.item(0)
             if (button) {
-                button.addEventListener("click", (e) => {
+                /*button.addEventListener("click", (e) => {
                     e.preventDefault()
                     const promesa = fetch("/nuevoTurno", {
-                        method: 'PUT'
+                        method: 'POST'
                     })
                     promesa.then((data) => {
-                        if (data.body === "OK") {
-
+                        console.log(data)
+                        if (data.body.toString() === "Guardado") {
+                            alert("Se ha registrado el nuevo turno")
                         } else {
-                            alert(data.body)
+                            alert(data.body.toString())
                         }
                     }).catch(() => {
                         alert("Se ha producido un error en el servidor")
                     })
-                })
+                })*/
             } else {
                 console.error("No se recuperó el botón de continuar")
             }

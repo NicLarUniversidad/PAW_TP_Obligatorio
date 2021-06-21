@@ -82,7 +82,7 @@ class NuevoTurnoController extends Controller
         if ($mensajeError == "") {
             //TODO: Validar disponibilidad de turno
             $medico = $this->request->get("turno-medico");
-            $dia = $this->request->get("fecha-turno");
+            $dia = str_replace("/","",$this->request->get("fecha-turno"));
             $horario = $this->request->get("horario-turno");
             $horarioFolder = str_replace(":", "", $horario);
             $extension = pathinfo($archivo["name"], PATHINFO_EXTENSION);

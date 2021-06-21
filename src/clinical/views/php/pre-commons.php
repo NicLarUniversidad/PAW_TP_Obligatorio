@@ -65,6 +65,7 @@
             <li><a href="profesionales">Profesionales</a></li>
             <li><a href="nuevoTurno">Sacar un turno</a></li>
             <li><a href="listaTurnos">Listados de turnos solicitados</a></li>
+            <li><a href="misTurnos">Turnero</a></li>
         </ul>
     </nav>
     <!-- Agregar imagen de casita-->
