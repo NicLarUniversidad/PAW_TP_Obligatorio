@@ -11,17 +11,6 @@ class MedicoModel extends Model
         $this->setField("nombre", "");
         $this->setField("apellido", "");
         $this->setField("cuit", "");
-    }
-
-    public function setNombre(string $nombre) : void {
-        $this->setField("nombre", $nombre);
-    }
-
-    public function setApellido(string $apellido) : void {
-        $this->setField("apellido", $apellido);
-    }
-
-    public function setCuil(string $cuil) : void {
-        $this->setField("cuit", $cuil);
+        $this->setField("estado", "");
     }
 }

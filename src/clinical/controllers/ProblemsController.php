@@ -11,6 +11,6 @@ class ProblemsController extends Controller
     }
 
     public function serverInternalError() : void {
-        $this->pageFinderService->findFileRute("pageNotFound");
+        $this->pageFinderService->findFileRute("pageNotFound", "php","php");
     }
 }

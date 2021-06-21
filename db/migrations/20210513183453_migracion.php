@@ -22,6 +22,7 @@ final class Migracion extends AbstractMigration
         $table->addColumn('nombre', 'string')
             ->addColumn('apellido', 'string')
             ->addColumn('CUIT', 'string', ['null' => true])
+            ->addColumn('estado', 'string', ['null' => true])
             ->create();
         $table = $this->table('disponibilidad');
         $table->addColumn('id_medico', 'integer')

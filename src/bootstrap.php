@@ -73,3 +73,5 @@ $routerService->delete('/gestion_medicos','MedicosController@delete');
 $routerService->get('/gestion_obras_sociales','ObrasSocialesController@abmGet');
 $routerService->post('/gestion_obras_sociales','ObrasSocialesController@post');
 $routerService->delete('/gestion_obras_sociales','ObrasSocialesController@delete');
+$routerService->get('/turnero_medico','TurneroController@getTurneroMedico');
+$routerService->get('/turnero_pacientes','TurneroController@getTurneroPacientes');

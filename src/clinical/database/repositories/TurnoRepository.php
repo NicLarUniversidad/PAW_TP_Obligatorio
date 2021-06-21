@@ -11,4 +11,10 @@ class TurnoRepository extends Repository
     {
         parent::__construct($logger, $connection, "turnos", "TurnoModel");
     }
+
+    public function getTurnoActual(): array
+    {
+        $ahora = strtotime("Now");
+        return $this->queryBuilder->select()->between("horario_turno", $ahora)->execute();
+    }
 }

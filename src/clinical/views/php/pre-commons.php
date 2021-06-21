@@ -16,6 +16,9 @@
     <script src="js/App.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/components/paw.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/scripts/Nav.js"></script>
     <?php
         if (isset($cssImports)) {
             foreach ($cssImports as $cssImport) {
@@ -50,21 +53,6 @@
         <a href="/login" class="login_anchor">Login</a>
     <?php
         }
-    ?>
-    <?php
-    if (isset($user)) {?>
-        <nav>
-            <ul>
-                <li>Administración
-                    <ul>
-                        <li><a href="/gestion_medicos">Médicos</a></li>
-                        <li><a href="/gestion_obras_sociales">Obras sociales</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <?php
-    }
     ?>
 </header>
 <main>

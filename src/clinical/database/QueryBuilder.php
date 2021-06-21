@@ -54,6 +54,17 @@ class QueryBuilder
         return $this;
     }
 
+    public function between(String $campo, String $turno, int $minutos = 30) : QueryBuilder {
+        if (!isset($this->values)) {
+            $this->values = Array();
+        }
+        $this->query .= " WHERE ";
+        $this->values[$campo] = $turno;
+        $this->query .= "$campo <= :$campo AND";
+        $this->query .= " DATE_ADD($campo, INTERVAL $minutos MINUTE) >= :$campo";
+        return $this;
+    }
+
     public function insert(string $table, array $values) : QueryBuilder {
         $this->query = "INSERT INTO `" . QueryBuilder::$DATABASE_NAME . "`.`$table` (";
         $this->values = $values;
