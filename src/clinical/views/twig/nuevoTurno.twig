@@ -1,0 +1,60 @@
+{% extends "parts/commons.twig" %}
+
+{% block main %}
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="institucional">Institucional</a></li>
+            <li><a href="noticias">Noticias</a></li>
+            <li><a href="obrasSociales">Obras sociales</a></li>
+            <li><a href="profesionales">Profesionales</a></li>
+            <li><a href="nuevoTurno">Sacar un turno</a></li>
+            <li><a href="listaTurnos">Listados de turnos solicitados</a></li>
+        </ul>
+    </nav>
+    <!-- Agregar imagen de casita-->
+    <a href="/"></a>
+    <!-- Agregar parte no genérica acá abajo-->
+    <section>
+        <h2> Sacar un turno</h2>
+        <form action="/nuevoTurno" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Identidad</legend>
+                <label for="apellido">Apellido
+                    <input id="apellido" name="apellido" required></label>
+                <label for="nombre">Nombre
+                    <input id="nombre" name="nombre" required></label>
+            </fieldset>
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="tel">Teléfono
+                    <input id="tel" name="tel" type="tel"></label>
+                <label for="fecha-nac">Fecha de nacimiento
+                    <input id="fecha-nac" name="fecha-nac" type="date"></label>
+                <label for="edad">Edad
+                    <input id="edad" name="edad" type="number" min="0"></label>
+                <label for="email">Email
+                    <input id="email" name="email" type="email"></label>
+            </fieldset>
+            <fieldset id="field-set-turno">
+                <legend>Turno</legend>
+                <label for="turno-medico">Médico
+                    <select id="turno-medico" name="turno-medico" required>
+                        {% if data %}
+                            {% for medico in data["medicos"] %}
+                                <option value="{{ medico["id"] }}">{{ medico["apellido"] }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select></label>
+                <label for="fecha-turno">Fecha del turno
+                    <input id="fecha-turno" name="fecha-turno" required readonly></label>
+                <label for="horario-turno">Horario del turno
+                    <input id="horario-turno" name="horario-turno" type="time" required readonly></label>
+                <label for="archivo">Archivo
+                    <input id="archivo" name="archivo" type="file" accept="image/png, image/jpeg" required></label>
+            </fieldset>
+            <button>Limpiar</button>
+            <button class="success">Solicitar</button>
+        </form>
+    </section>
+{% endblock %}

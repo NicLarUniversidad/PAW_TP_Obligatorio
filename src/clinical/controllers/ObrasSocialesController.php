@@ -5,6 +5,7 @@ namespace src\clinical\controllers;
 
 
 use src\clinical\services\ObraSocialService;
+use src\clinical\services\TwigPageFinderService;
 
 class ObrasSocialesController extends Controller
 {
@@ -15,6 +16,8 @@ class ObrasSocialesController extends Controller
     {
         parent::init();
         $this->service = new ObraSocialService($this->connection,$this->logger);
+        $this->pageFinderService = new TwigPageFinderService();
+        $this->pageFinderService->session = $this->session;
     }
 
     public function get() : void {

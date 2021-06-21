@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> {{ Title }}</title>
+    <script src="js/App.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/components/paw.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/scripts/Nav.js"></script>
+       {% if cssImports %}
+            {% for import in cssImports %}
+    <link rel="stylesheet" type="text/css" href="css/{{ import }}.css" />
+            {% endfor %}
+       {% endif %}
+    {% if jsImports %}
+        {% for import in jsImports %}
+            <script src="/js/scripts/{{ import }}.js" ></script>
+        {% endfor %}
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+
+    {% endblock %}
+</head>
+<body>
+<header>
+    <!-- Logo -->
+    <a href="/"></a>
+    <!--    <img src="/public/img/Logo.png" alt="Clinical" width="" height="">-->
+    <address>Av. Corrientes 123 <small>Teléfono: 555-555-555</small></address>
+    <h1>Clinical</h1>
+    {% if user %}
+    <p>{{ user["nombre"] }}</p>
+    {% else %}
+    <a href="/login" class="login_anchor">Login</a>
+    {% endif %}
+</header>
+<main>
+    {% block main %}
+
+    {% endblock %}
+
+</main>
+<footer>
+    <small>Contáctese con nosotros</small>
+    <small>Legal</small>
+</footer>
+</body>
+</html>

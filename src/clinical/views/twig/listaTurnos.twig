@@ -1,0 +1,66 @@
+{% extends "parts/commons.twig" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="css/listadoturnos.css" />
+{% endblock %}
+
+{% block main %}
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="institucional">Institucional</a></li>
+            <li><a href="noticias">Noticias</a></li>
+            <li><a href="obrasSociales">Obras sociales</a></li>
+            <li><a href="profesionales">Profesionales</a></li>
+            <li><a href="nuevoTurno">Sacar un turno</a></li>
+            <li><a href="listaTurnos">Listados de turnos solicitados</a></li>
+        </ul>
+    </nav>
+    <!-- Agregar imagen de casita-->
+    <a href="/"></a>
+    <!-- Agregar parte no genérica acá abajo-->
+    <section>
+        <h2>Consultar turnos</h2>
+        <a href="">Solicitar turno</a>
+        <select>
+            <option>Norma Tevez</option>
+            <option>Roberto Carlos</option>
+            <option>Juan Roman</option>
+        </select>
+
+        <form action="/listaTurnos" method="get" name="consultarTurno">
+            <input type="search" name="buscarTurno">
+            <input type="submit" value="Buscar">
+        </form>
+
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">Especialidad</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Horario</th>
+                <th scope="col">Profesional</th>
+                <th scope="col">Consultorio</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Odontología</td>
+                <td>02/05/21</td>
+                <td>09:00</td>
+                <td>Pablo Perez</td>
+                <td>Consultorio 1</td>
+            </tr>
+            <tr>
+                <td>Odontología</td>
+                <td>02/05/21</td>
+                <td>09:00</td>
+                <td>Pablo Perez</td>
+                <td>Consultorio 1</td>
+            </tr>
+            </tbody>
+            <!-- estos datos van de ejemplo-->
+        </table>
+    </section>
+{% endblock %}

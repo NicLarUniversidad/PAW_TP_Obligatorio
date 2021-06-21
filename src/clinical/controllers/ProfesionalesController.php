@@ -5,6 +5,7 @@ namespace src\clinical\controllers;
 
 
 use src\clinical\services\MedicoService;
+use src\clinical\services\TwigPageFinderService;
 
 class ProfesionalesController extends Controller
 {
@@ -15,6 +16,8 @@ class ProfesionalesController extends Controller
     {
         parent::init();
         $this->service = new MedicoService($this->connection,$this->logger);
+        $this->pageFinderService = new TwigPageFinderService();
+        $this->pageFinderService->session = $this->session;
     }
 
     public function get() : void {
